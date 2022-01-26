@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<circuit>
+  <version>1</version>
+  <attributes/>
+  <visualElements>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>firebird_pc</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,pc_reset,new_address:32</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>out_address:32</string>
+        </entry>
+        <entry>
+          <string>iverilogOptions</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/ -I /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>13</int>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/firebird_pc.v</file>
+        </entry>
+      </elementAttributes>
+      <pos x="160" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes/>
+      <pos x="100" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Add</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="460" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>C</string>
+        </entry>
+      </elementAttributes>
+      <pos x="40" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Value</string>
+          <long>4</long>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="300" y="0"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>clk</string>
+        </entry>
+        <entry>
+          <string>Frequency</string>
+          <int>2</int>
+        </entry>
+      </elementAttributes>
+      <pos x="180" y="500"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>C</string>
+        </entry>
+      </elementAttributes>
+      <pos x="220" y="500"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>NU</string>
+        </entry>
+      </elementAttributes>
+      <pos x="220" y="580"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>NU</string>
+        </entry>
+      </elementAttributes>
+      <pos x="560" y="-20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Ground</elementName>
+      <elementAttributes/>
+      <pos x="160" y="620"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Const</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Value</string>
+          <long>0</long>
+        </entry>
+      </elementAttributes>
+      <pos x="440" y="40"/>
+    </visualElement>
+  </visualElements>
+  <wires>
+    <wire>
+      <p1 x="40" y="160"/>
+      <p2 x="160" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="440" y="0"/>
+      <p2 x="460" y="0"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="80"/>
+      <p2 x="460" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="300" y="-20"/>
+      <p2 x="460" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="-20"/>
+      <p2 x="560" y="-20"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="580"/>
+      <p2 x="220" y="580"/>
+    </wire>
+    <wire>
+      <p1 x="120" y="180"/>
+      <p2 x="160" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="180"/>
+      <p2 x="460" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="180" y="500"/>
+      <p2 x="220" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="-40"/>
+      <p2 x="580" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="-40"/>
+      <p2 x="460" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="100" y="360"/>
+      <p2 x="120" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="200"/>
+      <p2 x="160" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="-80"/>
+      <p2 x="580" y="-80"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="580"/>
+      <p2 x="160" y="620"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="-80"/>
+      <p2 x="580" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="420" y="-40"/>
+      <p2 x="420" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="440" y="0"/>
+      <p2 x="440" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="120" y="180"/>
+      <p2 x="120" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="-80"/>
+      <p2 x="140" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="460" y="80"/>
+      <p2 x="460" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="300" y="-20"/>
+      <p2 x="300" y="0"/>
+    </wire>
+  </wires>
+  <measurementOrdering/>
+</circuit>
