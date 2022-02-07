@@ -35,22 +35,12 @@
           <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/firebird_pc.v</file>
         </entry>
       </elementAttributes>
-      <pos x="160" y="160"/>
+      <pos x="-480" y="60"/>
     </visualElement>
     <visualElement>
       <elementName>In</elementName>
       <elementAttributes/>
-      <pos x="100" y="360"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Add</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Bits</string>
-          <int>32</int>
-        </entry>
-      </elementAttributes>
-      <pos x="460" y="-40"/>
+      <pos x="-540" y="260"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -64,21 +54,7 @@
           <string>C</string>
         </entry>
       </elementAttributes>
-      <pos x="40" y="160"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Const</elementName>
-      <elementAttributes>
-        <entry>
-          <string>Value</string>
-          <long>4</long>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>32</int>
-        </entry>
-      </elementAttributes>
-      <pos x="300" y="0"/>
+      <pos x="-600" y="60"/>
     </visualElement>
     <visualElement>
       <elementName>Clock</elementName>
@@ -92,7 +68,7 @@
           <int>2</int>
         </entry>
       </elementAttributes>
-      <pos x="180" y="500"/>
+      <pos x="100" y="780"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -102,7 +78,7 @@
           <string>C</string>
         </entry>
       </elementAttributes>
-      <pos x="220" y="500"/>
+      <pos x="140" y="780"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -112,122 +88,1153 @@
           <string>NU</string>
         </entry>
       </elementAttributes>
-      <pos x="220" y="580"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Tunnel</elementName>
-      <elementAttributes>
-        <entry>
-          <string>NetName</string>
-          <string>NU</string>
-        </entry>
-      </elementAttributes>
-      <pos x="560" y="-20"/>
+      <pos x="140" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Ground</elementName>
       <elementAttributes/>
-      <pos x="160" y="620"/>
+      <pos x="80" y="900"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ROM</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>instmem</string>
+        </entry>
+        <entry>
+          <string>AddrBits</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-140" y="80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>firebird_cu</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>opcode:7</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>branch,mem_read,mem_to_reg,alu_op:2,mem_write,alu_src,reg_write</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>13</int>
+        </entry>
+        <entry>
+          <string>iverilogOptions</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/ -I /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/firebird_cu.v</file>
+        </entry>
+      </elementAttributes>
+      <pos x="240" y="-160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>firebird_regfile</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>clk,reset,raddr1:5,raddr2:5,we,waddr:5,wdata:32</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>rdata1:32,rdata2:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>13</int>
+        </entry>
+        <entry>
+          <string>iverilogOptions</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/ -I /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/firebird_regfile.v</file>
+        </entry>
+      </elementAttributes>
+      <pos x="240" y="60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>firebird_imm_gen</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>inst:32</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>imm:32</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>6</int>
+        </entry>
+        <entry>
+          <string>iverilogOptions</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/ -I /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/firebird_imm_gen.v</file>
+        </entry>
+      </elementAttributes>
+      <pos x="240" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>firebird_alu_ctrl</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>inst:4,alu_op:2</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>alu_ctrl_signal:4</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>10</int>
+        </entry>
+        <entry>
+          <string>iverilogOptions</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/ -I /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/firebird_alu_ctrl.v</file>
+        </entry>
+      </elementAttributes>
+      <pos x="740" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>RAMDualPort</elementName>
+      <elementAttributes>
+        <entry>
+          <string>AddrBits</string>
+          <int>8</int>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1120" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>firebird_alu</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>alu_data1:32,alu_data2:32,alu_ctrl_signal:4</string>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>alu_result:32,res_zero</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>13</int>
+        </entry>
+        <entry>
+          <string>iverilogOptions</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/ -I /Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/SingleCycle/rtl/firebird_alu.v</file>
+        </entry>
+      </elementAttributes>
+      <pos x="720" y="20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
+        </entry>
+        <entry>
+          <string>splitterSpreading</string>
+          <int>2</int>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>6-0,19-15,24-20,11-7,31-0,30-30,14-12</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-20" y="100"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Multiplexer</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>1,3</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>4</string>
+        </entry>
+      </elementAttributes>
+      <pos x="40" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Add</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="-180" y="-260"/>
     </visualElement>
     <visualElement>
       <elementName>Const</elementName>
       <elementAttributes>
         <entry>
           <string>Value</string>
-          <long>0</long>
+          <long>4</long>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
         </entry>
       </elementAttributes>
-      <pos x="440" y="40"/>
+      <pos x="-360" y="-260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Add</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="-260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Multiplexer</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="780" y="-300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>And</elementName>
+      <elementAttributes/>
+      <pos x="760" y="-200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>alures</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1020" y="20"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>alures</string>
+        </entry>
+      </elementAttributes>
+      <pos x="960" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>memread</string>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="-140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>memread</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1040" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>memtoreg</string>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="-120"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Multiplexer</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="1240" y="120"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>alures</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1160" y="120"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="3"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>memtoreg</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1260" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>memwrite</string>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="-80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>memwrite</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1040" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>alusrc</string>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="-60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="3"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>alusrc</string>
+        </entry>
+      </elementAttributes>
+      <pos x="620" y="180"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>regwrite</string>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="-40"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>regwrite</string>
+        </entry>
+      </elementAttributes>
+      <pos x="200" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes>
+        <entry>
+          <string>runRealTime</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>clk</string>
+        </entry>
+        <entry>
+          <string>Frequency</string>
+          <int>2</int>
+        </entry>
+      </elementAttributes>
+      <pos x="420" y="780"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Clock</elementName>
+      <elementAttributes>
+        <entry>
+          <string>runRealTime</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>clk</string>
+        </entry>
+        <entry>
+          <string>Frequency</string>
+          <int>2</int>
+        </entry>
+      </elementAttributes>
+      <pos x="700" y="780"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>memclk</string>
+        </entry>
+      </elementAttributes>
+      <pos x="520" y="780"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>regclk</string>
+        </entry>
+      </elementAttributes>
+      <pos x="800" y="780"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>regclk</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="60"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>memclk</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1040" y="220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>VDD</elementName>
+      <elementAttributes/>
+      <pos x="-200" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>7-0</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-180" y="80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes/>
+      <pos x="180" y="80"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Splitter</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Input Splitting</string>
+          <string>32</string>
+        </entry>
+        <entry>
+          <string>Output Splitting</string>
+          <string>7-0</string>
+        </entry>
+      </elementAttributes>
+      <pos x="1000" y="160"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>NU</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-300" y="-220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>NU</string>
+        </entry>
+      </elementAttributes>
+      <pos x="480" y="-220"/>
     </visualElement>
   </visualElements>
   <wires>
     <wire>
-      <p1 x="40" y="160"/>
-      <p2 x="160" y="160"/>
+      <p1 x="-360" y="-260"/>
+      <p2 x="-180" y="-260"/>
     </wire>
     <wire>
-      <p1 x="440" y="0"/>
-      <p2 x="460" y="0"/>
+      <p1 x="-40" y="-260"/>
+      <p2 x="580" y="-260"/>
     </wire>
     <wire>
-      <p1 x="420" y="80"/>
-      <p2 x="460" y="80"/>
+      <p1 x="-120" y="-260"/>
+      <p2 x="-80" y="-260"/>
     </wire>
     <wire>
-      <p1 x="300" y="-20"/>
-      <p2 x="460" y="-20"/>
+      <p1 x="640" y="-260"/>
+      <p2 x="780" y="-260"/>
     </wire>
     <wire>
-      <p1 x="520" y="-20"/>
-      <p2 x="560" y="-20"/>
+      <p1 x="-540" y="260"/>
+      <p2 x="-520" y="260"/>
     </wire>
     <wire>
-      <p1 x="160" y="580"/>
-      <p2 x="220" y="580"/>
+      <p1 x="0" y="260"/>
+      <p2 x="60" y="260"/>
     </wire>
     <wire>
-      <p1 x="120" y="180"/>
-      <p2 x="160" y="180"/>
+      <p1 x="180" y="260"/>
+      <p2 x="200" y="260"/>
     </wire>
     <wire>
-      <p1 x="420" y="180"/>
-      <p2 x="460" y="180"/>
+      <p1 x="700" y="-200"/>
+      <p2 x="760" y="-200"/>
     </wire>
     <wire>
-      <p1 x="180" y="500"/>
-      <p2 x="220" y="500"/>
+      <p1 x="1180" y="200"/>
+      <p2 x="1220" y="200"/>
     </wire>
     <wire>
-      <p1 x="520" y="-40"/>
-      <p2 x="580" y="-40"/>
+      <p1 x="1040" y="200"/>
+      <p2 x="1120" y="200"/>
     </wire>
     <wire>
-      <p1 x="420" y="-40"/>
-      <p2 x="460" y="-40"/>
+      <p1 x="500" y="-140"/>
+      <p2 x="600" y="-140"/>
     </wire>
     <wire>
-      <p1 x="100" y="360"/>
-      <p2 x="120" y="360"/>
+      <p1 x="100" y="780"/>
+      <p2 x="140" y="780"/>
     </wire>
     <wire>
-      <p1 x="140" y="200"/>
-      <p2 x="160" y="200"/>
+      <p1 x="420" y="780"/>
+      <p2 x="520" y="780"/>
     </wire>
     <wire>
-      <p1 x="140" y="-80"/>
-      <p2 x="580" y="-80"/>
+      <p1 x="700" y="780"/>
+      <p2 x="800" y="780"/>
     </wire>
     <wire>
-      <p1 x="160" y="580"/>
-      <p2 x="160" y="620"/>
+      <p1 x="0" y="140"/>
+      <p2 x="100" y="140"/>
     </wire>
     <wire>
-      <p1 x="580" y="-80"/>
-      <p2 x="580" y="-40"/>
+      <p1 x="1280" y="140"/>
+      <p2 x="1360" y="140"/>
     </wire>
     <wire>
-      <p1 x="420" y="-40"/>
-      <p2 x="420" y="80"/>
+      <p1 x="180" y="140"/>
+      <p2 x="240" y="140"/>
     </wire>
     <wire>
-      <p1 x="440" y="0"/>
-      <p2 x="440" y="40"/>
+      <p1 x="500" y="-80"/>
+      <p2 x="600" y="-80"/>
     </wire>
     <wire>
-      <p1 x="120" y="180"/>
-      <p2 x="120" y="360"/>
+      <p1 x="-520" y="80"/>
+      <p2 x="-480" y="80"/>
     </wire>
     <wire>
-      <p1 x="140" y="-80"/>
-      <p2 x="140" y="200"/>
+      <p1 x="-220" y="80"/>
+      <p2 x="-200" y="80"/>
     </wire>
     <wire>
-      <p1 x="460" y="80"/>
-      <p2 x="460" y="180"/>
+      <p1 x="500" y="80"/>
+      <p2 x="520" y="80"/>
     </wire>
     <wire>
-      <p1 x="300" y="-20"/>
-      <p2 x="300" y="0"/>
+      <p1 x="-160" y="80"/>
+      <p2 x="-140" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="180" y="80"/>
+      <p2 x="240" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="80"/>
+      <p2 x="600" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="-200" y="80"/>
+      <p2 x="-180" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="60" y="400"/>
+      <p2 x="680" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="20"/>
+      <p2 x="720" y="20"/>
+    </wire>
+    <wire>
+      <p1 x="980" y="20"/>
+      <p2 x="1020" y="20"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="340"/>
+      <p2 x="740" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="820" y="-280"/>
+      <p2 x="880" y="-280"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="280"/>
+      <p2 x="1060" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="800" y="-220"/>
+      <p2 x="840" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="-300" y="-220"/>
+      <p2 x="-240" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="-220"/>
+      <p2 x="520" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="-220"/>
+      <p2 x="580" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="-240" y="-220"/>
+      <p2 x="-180" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="80" y="860"/>
+      <p2 x="140" y="860"/>
+    </wire>
+    <wire>
+      <p1 x="0" y="220"/>
+      <p2 x="140" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="1040" y="220"/>
+      <p2 x="1120" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="-160"/>
+      <p2 x="240" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="-200" y="-160"/>
+      <p2 x="-40" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="-160"/>
+      <p2 x="700" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="-160"/>
+      <p2 x="760" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="160"/>
+      <p2 x="240" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="160"/>
+      <p2 x="1240" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="960" y="160"/>
+      <p2 x="1000" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="1020" y="160"/>
+      <p2 x="1120" y="160"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="-100"/>
+      <p2 x="540" y="-100"/>
+    </wire>
+    <wire>
+      <p1 x="0" y="100"/>
+      <p2 x="40" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="100" y="100"/>
+      <p2 x="240" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="640" y="100"/>
+      <p2 x="660" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="-500" y="100"/>
+      <p2 x="-480" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="-80" y="100"/>
+      <p2 x="-20" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="0" y="420"/>
+      <p2 x="40" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="-500" y="-360"/>
+      <p2 x="880" y="-360"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="-40"/>
+      <p2 x="600" y="-40"/>
+    </wire>
+    <wire>
+      <p1 x="60" y="360"/>
+      <p2 x="240" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="360" y="360"/>
+      <p2 x="560" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="940" y="360"/>
+      <p2 x="960" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="40"/>
+      <p2 x="720" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="980" y="40"/>
+      <p2 x="1180" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="-300"/>
+      <p2 x="780" y="-300"/>
+    </wire>
+    <wire>
+      <p1 x="0" y="300"/>
+      <p2 x="40" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="-200" y="-240"/>
+      <p2 x="-180" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="-240"/>
+      <p2 x="580" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="-120" y="-240"/>
+      <p2 x="-100" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="640" y="-240"/>
+      <p2 x="660" y="-240"/>
+    </wire>
+    <wire>
+      <p1 x="1040" y="240"/>
+      <p2 x="1120" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="820" y="-180"/>
+      <p2 x="840" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="-240" y="-180"/>
+      <p2 x="-100" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="-180"/>
+      <p2 x="660" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="0" y="180"/>
+      <p2 x="120" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="180"/>
+      <p2 x="960" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="180"/>
+      <p2 x="240" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="180"/>
+      <p2 x="1120" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="500"/>
+      <p2 x="1360" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="-120"/>
+      <p2 x="1180" y="-120"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="-120"/>
+      <p2 x="600" y="-120"/>
+    </wire>
+    <wire>
+      <p1 x="120" y="120"/>
+      <p2 x="240" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="120"/>
+      <p2 x="600" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="1160" y="120"/>
+      <p2 x="1240" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="-200" y="120"/>
+      <p2 x="-140" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="440"/>
+      <p2 x="720" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="-60"/>
+      <p2 x="600" y="-60"/>
+    </wire>
+    <wire>
+      <p1 x="-600" y="60"/>
+      <p2 x="-480" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="500" y="60"/>
+      <p2 x="580" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="60"/>
+      <p2 x="720" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="60"/>
+      <p2 x="240" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="720" y="380"/>
+      <p2 x="740" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="-80" y="-320"/>
+      <p2 x="700" y="-320"/>
+    </wire>
+    <wire>
+      <p1 x="0" y="340"/>
+      <p2 x="0" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="960" y="180"/>
+      <p2 x="960" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="580" y="20"/>
+      <p2 x="580" y="60"/>
+    </wire>
+    <wire>
+      <p1 x="1220" y="160"/>
+      <p2 x="1220" y="200"/>
+    </wire>
+    <wire>
+      <p1 x="-520" y="80"/>
+      <p2 x="-520" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="-200" y="-240"/>
+      <p2 x="-200" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="-200" y="120"/>
+      <p2 x="-200" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="-200" y="-160"/>
+      <p2 x="-200" y="80"/>
+    </wire>
+    <wire>
+      <p1 x="840" y="-220"/>
+      <p2 x="840" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="80"/>
+      <p2 x="520" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="520" y="-220"/>
+      <p2 x="520" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="160"/>
+      <p2 x="140" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="-80" y="-320"/>
+      <p2 x="-80" y="-260"/>
+    </wire>
+    <wire>
+      <p1 x="80" y="860"/>
+      <p2 x="80" y="900"/>
+    </wire>
+    <wire>
+      <p1 x="1360" y="140"/>
+      <p2 x="1360" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="720" y="380"/>
+      <p2 x="720" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="40"/>
+      <p2 x="660" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="660" y="-240"/>
+      <p2 x="660" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="1180" y="-120"/>
+      <p2 x="1180" y="40"/>
+    </wire>
+    <wire>
+      <p1 x="540" y="-100"/>
+      <p2 x="540" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="800" y="-260"/>
+      <p2 x="800" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="180"/>
+      <p2 x="160" y="500"/>
+    </wire>
+    <wire>
+      <p1 x="-100" y="-240"/>
+      <p2 x="-100" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="100" y="100"/>
+      <p2 x="100" y="140"/>
+    </wire>
+    <wire>
+      <p1 x="740" y="-160"/>
+      <p2 x="740" y="-120"/>
+    </wire>
+    <wire>
+      <p1 x="1060" y="180"/>
+      <p2 x="1060" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="-40" y="-260"/>
+      <p2 x="-40" y="-160"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="-160"/>
+      <p2 x="40" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="40" y="300"/>
+      <p2 x="40" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="680" y="340"/>
+      <p2 x="680" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="1260" y="160"/>
+      <p2 x="1260" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="620" y="120"/>
+      <p2 x="620" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="-240" y="-220"/>
+      <p2 x="-240" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="-240"/>
+      <p2 x="560" y="120"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="120"/>
+      <p2 x="560" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="880" y="-360"/>
+      <p2 x="880" y="-280"/>
+    </wire>
+    <wire>
+      <p1 x="-500" y="-360"/>
+      <p2 x="-500" y="100"/>
+    </wire>
+    <wire>
+      <p1 x="180" y="140"/>
+      <p2 x="180" y="260"/>
+    </wire>
+    <wire>
+      <p1 x="120" y="120"/>
+      <p2 x="120" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="60" y="260"/>
+      <p2 x="60" y="360"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="60"/>
+      <p2 x="700" y="180"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="-320"/>
+      <p2 x="700" y="-300"/>
+    </wire>
+    <wire>
+      <p1 x="700" y="-200"/>
+      <p2 x="700" y="-160"/>
     </wire>
   </wires>
   <measurementOrdering/>

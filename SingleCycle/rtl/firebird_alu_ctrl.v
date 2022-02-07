@@ -1,12 +1,12 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-01-28 11:44:48
-//  LastEditTime: 2022-02-06 17:36:38
+//  LastEditTime: 2022-02-07 20:42:01
 //  LastEditors: YiBo Zhang
 //  Description: alu_control to control alu 
 //  the output [3:0] alu_ctrl_signal is the alu input
 //  
- /////////////////////////////////////
+//////////////////////////////////////
 module firebird_alu_ctrl (
   input [3:0] inst,
   input [1:0] alu_op,

@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-02-06 19:42:35
-//  LastEditTime: 2022-02-06 20:46:53
+//  LastEditTime: 2022-02-07 19:33:47
 //  LastEditors: YiBo Zhang
 //  Description: this is firebird cu
 //  input is instruction's opcode and output is control signal
@@ -19,7 +19,7 @@ module firebird_cu (
   output reg_write
 );
   
-//////////////////////////////////////
+//////////////////////////////////////m
 // referance from computer organizaion and design p183
 // output branch : instruction is the branch(b type) instruction
 // output mem_read : memory read

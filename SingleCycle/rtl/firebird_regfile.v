@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-01-26 16:00:02
-//  LastEditTime: 2022-01-26 16:28:30
+//  LastEditTime: 2022-02-07 20:55:53
 //  LastEditors: YiBo Zhang
 //  Description: register pile
 //  
@@ -20,6 +20,7 @@ module firebird_regfile (
 );
 
 reg [`FIREBIRD_REG_SIZE-1:0] reg_array[31:0];
+integer i;
 
 // reset or write
 always @(posedge clk ) begin
@@ -34,8 +35,8 @@ end
 
 // read two data in one cycle (x0 is hardware 0)
 // data1
-assign rdata1 = (raddr1 = 5'b0) ? 5'b0 : reg_array[raddr1]; 
+assign rdata1 = (raddr1 == 5'b0) ? 5'b0 : reg_array[raddr1]; 
 // data2
-assign rdata2 = (raddr2 = 5'b0) ? 5'b0 : reg_array[raddr2]; 
+assign rdata2 = (raddr2 == 5'b0) ? 5'b0 : reg_array[raddr2]; 
 
 endmodule
