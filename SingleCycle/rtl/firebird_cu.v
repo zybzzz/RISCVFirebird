@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-02-06 19:42:35
-//  LastEditTime: 2022-02-07 19:33:47
+//  LastEditTime: 2022-02-08 12:02:18
 //  LastEditors: YiBo Zhang
 //  Description: this is firebird cu
 //  input is instruction's opcode and output is control signal
@@ -43,7 +43,7 @@ assign s_type_ctrl = (opcode[6:0] == 7'b0100011);
 
 assign alu_src = i_type_ctrl || s_type_ctrl;
 assign mem_to_reg = i_type_ctrl;
-assign reg_write = r_type_ctrl || s_type_ctrl;
+assign reg_write = r_type_ctrl || i_type_ctrl;
 assign mem_read = i_type_ctrl;
 assign mem_write = s_type_ctrl;
 assign branch = b_type_ctrl;

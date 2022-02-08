@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-01-26 23:32:14
-//  LastEditTime: 2022-01-27 09:57:51
+//  LastEditTime: 2022-02-08 12:16:35
 //  LastEditors: YiBo Zhang
 //  Description: this conponent is used for immediate generation
 //  the instruction is input(immediate generate by different instruction) - 
@@ -19,7 +19,8 @@ module firebird_imm_gen (
 // S 010|0011
 // B 110|0011
 // 000 -> I 010 -> S 110 -> B(imm in B will left move 1 bit)
-wire sel_opcode = inst[6:4];
+wire [6:4]sel_opcode ;
+assign sel_opcode = inst[6:4];
 assign imm = (sel_opcode == 3'b000) ? {{20{inst[31]}},inst[31:20]}:
       (sel_opcode == 3'b010) ? {{20{inst[31]}}, inst[31:25], inst[11:7]}:
       (sel_opcode == 3'b110) ? {{20{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0}:  

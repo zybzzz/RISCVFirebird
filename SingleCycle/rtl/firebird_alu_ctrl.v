@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-01-28 11:44:48
-//  LastEditTime: 2022-02-07 20:42:01
+//  LastEditTime: 2022-02-08 11:49:25
 //  LastEditors: YiBo Zhang
 //  Description: alu_control to control alu 
 //  the output [3:0] alu_ctrl_signal is the alu input
@@ -26,7 +26,8 @@ assign func_13 = inst[1];
 assign func_12 = inst[0];
 
 // the r-type instruction alu_ctrl_signal result
-wire r_type_signal = ({4{~func_30 && ~func_14 && ~func_13 && ~func_12}} & 0010)       // add
+wire [3:0]r_type_signal;
+assign r_type_signal = ({4{~func_30 && ~func_14 && ~func_13 && ~func_12}} & 0010)       // add
                    | ({4{func_30 && ~func_14 && ~func_13 && ~func_12}} & 0110)       // subtract
                    | ({4{~func_30 && func_14 && func_13 && func_12}} & 0000)       // AND
                    | ({4{~func_30 && func_14 && func_13 && ~func_12}} & 0001);      // OR

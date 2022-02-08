@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-01-26 16:00:02
-//  LastEditTime: 2022-02-07 20:55:53
+//  LastEditTime: 2022-02-08 13:28:03
 //  LastEditors: YiBo Zhang
 //  Description: register pile
 //  
@@ -28,6 +28,7 @@ always @(posedge clk ) begin
     for (i = 1; i < 32; i = i + 1) begin
       reg_array[i] <= 32'b0;
     end
+    //reg_array[4] <= 32'b111;  //just for test
   end
   else
     if(we == 1) reg_array[waddr] <= wdata;
