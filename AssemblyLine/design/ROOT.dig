@@ -11,7 +11,22 @@
           <shapeType>SIMPLE</shapeType>
         </entry>
       </elementAttributes>
-      <pos x="120" y="240"/>
+      <pos x="12820" y="6140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>IF.dig</elementName>
+      <elementAttributes/>
+      <pos x="26820" y="-9140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>IFIDReg.dig</elementName>
+      <elementAttributes>
+        <entry>
+          <string>shapeType</string>
+          <shapeType>LAYOUT</shapeType>
+        </entry>
+      </elementAttributes>
+      <pos x="12980" y="6100"/>
     </visualElement>
   </visualElements>
   <wires/>

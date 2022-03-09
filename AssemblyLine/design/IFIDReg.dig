@@ -12,160 +12,92 @@
         </entry>
         <entry>
           <string>Label</string>
-          <string>fb_pc</string>
+          <string>fb_ifidreg</string>
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>pc_write,clk,pc_reset,new_address:32</string>
+          <string>clk,lock,we,if_pc:32,if_inst:32</string>
         </entry>
         <entry>
           <string>Width</string>
-          <int>10</int>
+          <int>11</int>
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>out_address:32</string>
+          <string>id_pc:32,id_inst:32</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
-          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl 
 -I /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl</string>
         </entry>
         <entry>
           <string>CodeFile</string>
-          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl/fb_pc.v</file>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl/fb_ifidreg.v</file>
         </entry>
       </elementAttributes>
-      <pos x="0" y="260"/>
+      <pos x="260" y="240"/>
     </visualElement>
     <visualElement>
       <elementName>Clock</elementName>
       <elementAttributes>
         <entry>
-          <string>runRealTime</string>
+          <string>small</string>
           <boolean>true</boolean>
         </entry>
         <entry>
           <string>Label</string>
           <string>clk</string>
         </entry>
-        <entry>
-          <string>pinNumber</string>
-          <string>2</string>
-        </entry>
       </elementAttributes>
-      <pos x="-160" y="280"/>
+      <pos x="140" y="240"/>
     </visualElement>
     <visualElement>
       <elementName>In</elementName>
       <elementAttributes>
         <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
           <string>Description</string>
-          <string>用于在插入气泡的时候锁住pc</string>
+          <string>锁定当前寄存器的控制信号</string>
         </entry>
         <entry>
           <string>Label</string>
-          <string>pw</string>
-        </entry>
-        <entry>
-          <string>pinNumber</string>
-          <string>1</string>
+          <string>lk</string>
         </entry>
       </elementAttributes>
-      <pos x="-160" y="220"/>
+      <pos x="140" y="260"/>
     </visualElement>
     <visualElement>
       <elementName>In</elementName>
       <elementAttributes>
         <entry>
-          <string>Description</string>
-          <string>用于重置pc</string>
+          <string>small</string>
+          <boolean>true</boolean>
         </entry>
-        <entry>
-          <string>Label</string>
-          <string>rs</string>
-        </entry>
-        <entry>
-          <string>pinNumber</string>
-          <string>3</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-160" y="320"/>
-    </visualElement>
-    <visualElement>
-      <elementName>ROM</elementName>
-      <elementAttributes>
-        <entry>
-          <string>AddrBits</string>
-          <int>10</int>
-        </entry>
-        <entry>
-          <string>Label</string>
-          <string>instmem</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>32</int>
-        </entry>
-      </elementAttributes>
-      <pos x="460" y="300"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Const</elementName>
-      <elementAttributes/>
-      <pos x="380" y="340"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Out</elementName>
-      <elementAttributes>
         <entry>
           <string>Description</string>
-          <string>输出是指令寄存器中取出的指令</string>
+          <string>写使能信号</string>
         </entry>
         <entry>
           <string>Label</string>
-          <string>ir</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>32</int>
-        </entry>
-        <entry>
-          <string>pinNumber</string>
-          <string>5</string>
+          <string>we</string>
         </entry>
       </elementAttributes>
-      <pos x="580" y="320"/>
+      <pos x="140" y="280"/>
     </visualElement>
     <visualElement>
       <elementName>In</elementName>
       <elementAttributes>
         <entry>
-          <string>Description</string>
-          <string>输入的32位pc新地址
-来源包括：pc自增或是分支指令的目的地址</string>
+          <string>small</string>
+          <boolean>true</boolean>
         </entry>
-        <entry>
-          <string>Label</string>
-          <string>ad</string>
-        </entry>
-        <entry>
-          <string>Bits</string>
-          <int>32</int>
-        </entry>
-        <entry>
-          <string>pinNumber</string>
-          <string>4</string>
-        </entry>
-      </elementAttributes>
-      <pos x="-160" y="380"/>
-    </visualElement>
-    <visualElement>
-      <elementName>Out</elementName>
-      <elementAttributes>
         <entry>
           <string>Description</string>
-          <string>pc寄存器的数值</string>
+          <string>pc 指令地址</string>
         </entry>
         <entry>
           <string>Label</string>
@@ -175,70 +107,124 @@
           <string>Bits</string>
           <int>32</int>
         </entry>
+      </elementAttributes>
+      <pos x="140" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
         <entry>
-          <string>pinNumber</string>
-          <string>6</string>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>ir</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
         </entry>
       </elementAttributes>
-      <pos x="580" y="200"/>
+      <pos x="140" y="320"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>pc 指令地址</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>opc</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>oir</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="260"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Testcase</elementName>
+      <elementAttributes>
+        <entry>
+          <string>Label</string>
+          <string>test</string>
+        </entry>
+        <entry>
+          <string>Testdata</string>
+          <testData>
+            <dataString>clk lk we pc ir opc oir
+0 0 1 1 1 0 0
+C 0 1 1 1 1 1
+0 1 1 0 0 1 1
+C 1 1 1 1 1 1</dataString>
+          </testData>
+        </entry>
+      </elementAttributes>
+      <pos x="220" y="420"/>
     </visualElement>
   </visualElements>
   <wires>
     <wire>
-      <p1 x="520" y="320"/>
-      <p2 x="580" y="320"/>
+      <p1 x="140" y="240"/>
+      <p2 x="260" y="240"/>
     </wire>
     <wire>
-      <p1 x="-160" y="320"/>
-      <p2 x="0" y="320"/>
+      <p1 x="480" y="240"/>
+      <p2 x="580" y="240"/>
     </wire>
     <wire>
-      <p1 x="380" y="340"/>
-      <p2 x="460" y="340"/>
+      <p1 x="140" y="320"/>
+      <p2 x="260" y="320"/>
     </wire>
     <wire>
-      <p1 x="-120" y="340"/>
-      <p2 x="0" y="340"/>
+      <p1 x="140" y="260"/>
+      <p2 x="260" y="260"/>
     </wire>
     <wire>
-      <p1 x="-100" y="260"/>
-      <p2 x="0" y="260"/>
+      <p1 x="480" y="260"/>
+      <p2 x="580" y="260"/>
     </wire>
     <wire>
-      <p1 x="-160" y="280"/>
-      <p2 x="0" y="280"/>
+      <p1 x="140" y="280"/>
+      <p2 x="260" y="280"/>
     </wire>
     <wire>
-      <p1 x="360" y="200"/>
-      <p2 x="580" y="200"/>
-    </wire>
-    <wire>
-      <p1 x="200" y="300"/>
-      <p2 x="360" y="300"/>
-    </wire>
-    <wire>
-      <p1 x="360" y="300"/>
-      <p2 x="460" y="300"/>
-    </wire>
-    <wire>
-      <p1 x="-160" y="220"/>
-      <p2 x="-100" y="220"/>
-    </wire>
-    <wire>
-      <p1 x="-160" y="380"/>
-      <p2 x="-120" y="380"/>
-    </wire>
-    <wire>
-      <p1 x="-100" y="220"/>
-      <p2 x="-100" y="260"/>
-    </wire>
-    <wire>
-      <p1 x="-120" y="340"/>
-      <p2 x="-120" y="380"/>
-    </wire>
-    <wire>
-      <p1 x="360" y="200"/>
-      <p2 x="360" y="300"/>
+      <p1 x="140" y="300"/>
+      <p2 x="260" y="300"/>
     </wire>
   </wires>
   <measurementOrdering/>

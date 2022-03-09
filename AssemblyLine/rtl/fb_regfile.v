@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-08 22:16:46
-//  LastEditTime: 2022-03-08 23:09:46
+//  LastEditTime: 2022-03-09 22:06:14
 //  LastEditors: YiBo Zhang
 //  Description: register file
 //  1. use posedge to write then use negedge to read to solve data hazard
@@ -16,8 +16,8 @@ module fb_regfile (
   input we,           // write enable
   input [4:0] waddr,
   input [`FB_32BITS-1:0] wdata,
-  output [`FB_32BITS-1:0] rdata1,
-  output [`FB_32BITS-1:0] rdata2
+  output reg [`FB_32BITS-1:0] rdata1,     //write in negedge, so define as reg type FIXME:need test
+  output reg [`FB_32BITS-1:0] rdata2
 );
 
 reg [`FB_32BITS-1:0] reg_array[31:0];
@@ -38,9 +38,9 @@ end
 always @(negedge clk ) begin
   // read two data in one cycle (x0 is hardware 0)
   // data1
-  assign rdata1 = (raddr1 == 5'b0) ? 5'b0 : reg_array[raddr1]; 
+  assign rdata1 <= (raddr1 == 5'b0) ? 5'b0 : reg_array[raddr1]; 
   // data2
-  assign rdata2 = (raddr2 == 5'b0) ? 5'b0 : reg_array[raddr2]; 
+  assign rdata2 <= (raddr2 == 5'b0) ? 5'b0 : reg_array[raddr2]; 
 end
 
 
