@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 19:18:52
-//  LastEditTime: 2022-03-13 19:48:23
+//  LastEditTime: 2022-03-13 22:04:23
 //  LastEditors: YiBo Zhang
 //  Description: this is cu, generatint different signal for EX/MEM/WB
 //  
@@ -16,7 +16,8 @@ module fb_cu (
   output mem_write,
   output branch,
   output mem_to_reg,
-  output reg_write
+  output reg_write,
+  output pc_src
 );
 
 ////////////////////////////////////////
@@ -28,6 +29,7 @@ module fb_cu (
 //  output branch: branch instruction
 //  output mem_to_reg: register write data from alu result or rs2
 //  output reg_write: register write
+//  output pc_src: decide pc come from increase(0) or control hazard unit(1)
 ////////////////////////////////////////
 
 wire r_type_ctrl;
@@ -42,7 +44,11 @@ assign b_type_ctrl = (opcode[6:0] == 7'b1100011);
 assign i_type_ctrl = (opcode[6:0] == 7'b0000011);
 assign s_type_ctrl = (opcode[6:0] == 7'b0100011);
 assign jalr_inst = (opcode[6:0] == 7'b1100111);
+assign j_type_ctrl = (opcode[6:0] == 7'b1101111);
 
+/////////////////////////////////////
+//IF
+assign pc_src = b_type_ctrl || jalr_inst || j_type_ctrl;
 /////////////////////////////////////
 //EX
 //alu_op r:10 b:01 i & s & jalr(i):00
