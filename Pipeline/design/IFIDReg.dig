@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,lock,we,if_pc:32,if_inst:32</string>
+          <string>clk,lock,we,rst,if_pc:32,if_pc_add_1:32,if_inst:32</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -24,16 +24,16 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>id_pc:32,id_inst:32</string>
+          <string>id_pc:32,id_inst:32,id_pc_add_1:32</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
-          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl 
--I /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl 
+-I /Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl</string>
         </entry>
         <entry>
           <string>CodeFile</string>
-          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl/fb_ifidreg.v</file>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl/fb_ifidreg.v</file>
         </entry>
       </elementAttributes>
       <pos x="260" y="240"/>
@@ -108,7 +108,7 @@
           <int>32</int>
         </entry>
       </elementAttributes>
-      <pos x="140" y="300"/>
+      <pos x="140" y="320"/>
     </visualElement>
     <visualElement>
       <elementName>In</elementName>
@@ -130,7 +130,7 @@
           <int>32</int>
         </entry>
       </elementAttributes>
-      <pos x="140" y="320"/>
+      <pos x="140" y="360"/>
     </visualElement>
     <visualElement>
       <elementName>Out</elementName>
@@ -196,6 +196,68 @@ C 1 1 1 1 1 1</dataString>
       </elementAttributes>
       <pos x="220" y="420"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>rst清除信号，产生控制冒险时清空寄存器数据</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>rst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="300"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>pcn 顺序执行下一指令地址，用于jalr指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>pcn</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>pn 下一指令地址，用于jalr指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>pn</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="280"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -219,8 +281,20 @@ C 1 1 1 1 1 1</dataString>
       <p2 x="580" y="260"/>
     </wire>
     <wire>
+      <p1 x="140" y="340"/>
+      <p2 x="260" y="340"/>
+    </wire>
+    <wire>
       <p1 x="140" y="280"/>
       <p2 x="260" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="280"/>
+      <p2 x="580" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="360"/>
+      <p2 x="260" y="360"/>
     </wire>
     <wire>
       <p1 x="140" y="300"/>
