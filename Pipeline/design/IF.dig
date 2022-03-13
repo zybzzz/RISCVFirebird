@@ -28,12 +28,12 @@
         </entry>
         <entry>
           <string>iverilogOptions</string>
-          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl
--I /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl</string>
+          <string>-y /Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl
+-I /Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl</string>
         </entry>
         <entry>
           <string>CodeFile</string>
-          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl/fb_pc.v</file>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl/fb_pc.v</file>
         </entry>
       </elementAttributes>
       <pos x="0" y="260"/>

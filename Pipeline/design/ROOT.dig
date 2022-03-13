@@ -26,9 +26,14 @@
           <shapeType>LAYOUT</shapeType>
         </entry>
       </elementAttributes>
-      <pos x="12980" y="6100"/>
+      <pos x="13040" y="6080"/>
     </visualElement>
   </visualElements>
-  <wires/>
+  <wires>
+    <wire>
+      <p1 x="12880" y="6160"/>
+      <p2 x="13040" y="6160"/>
+    </wire>
+  </wires>
   <measurementOrdering/>
 </circuit>

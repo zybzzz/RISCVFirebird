@@ -1,9 +1,9 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-10 10:19:37
-//  LastEditTime: 2022-03-10 11:18:36
+//  LastEditTime: 2022-03-13 16:27:25
 //  LastEditors: YiBo Zhang
-//  Description: 
+//  Description: this is data hazard detection unit
 //  
  /////////////////////////////////////
 `include "./fb_defines.v"
