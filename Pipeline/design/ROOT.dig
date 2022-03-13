@@ -28,6 +28,11 @@
       </elementAttributes>
       <pos x="13040" y="6080"/>
     </visualElement>
+    <visualElement>
+      <elementName>ID.dig</elementName>
+      <elementAttributes/>
+      <pos x="12600" y="6200"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
