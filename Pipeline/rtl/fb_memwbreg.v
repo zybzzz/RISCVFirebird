@@ -1,13 +1,19 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 11:04:22
-//  LastEditTime: 2022-03-14 11:30:18
+//  LastEditTime: 2022-03-14 12:01:01
 //  LastEditors: YiBo Zhang
 //  Description: this is MEM/RB register
 //  1. this register don't have reset signal
  /////////////////////////////////////
+ /////////////////////////////////////
+ // Digital port:
+ // input: clk,we,mem_mem_to_reg,mem_reg_write,mem_memory_data:32,mem_alu_res:32,mem_register_rd:5
+ // output: wb_mem_to_reg,wb_reg_write,wb_memory_data:32,wb_alu_res:32,wb_register_rd:5
+ /////////////////////////////////////
+ 
 `include "./fb_defines.v"
-module fb_memebreg (
+module fb_memwbreg (
   input clk,
   input we,
   // input
