@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 19:18:52
-//  LastEditTime: 2022-03-13 22:04:23
+//  LastEditTime: 2022-03-14 20:40:21
 //  LastEditors: YiBo Zhang
 //  Description: this is cu, generatint different signal for EX/MEM/WB
 //  
@@ -36,12 +36,14 @@ wire r_type_ctrl;
 wire b_type_ctrl;
 wire i_type_ctrl;
 wire s_type_ctrl;
+wire lw_inst;
 wire jalr_inst;
 
 // judge what type of instruction
 assign r_type_ctrl = (opcode[6:0] == 7'b0110011);
 assign b_type_ctrl = (opcode[6:0] == 7'b1100011);
-assign i_type_ctrl = (opcode[6:0] == 7'b0000011);
+assign lw_inst = (opcode[6:0] == 7'b0000011);
+assign i_type_ctrl = (opcode[6:0] == 7'b0010011);     // * that i-type only includecalculate instruction
 assign s_type_ctrl = (opcode[6:0] == 7'b0100011);
 assign jalr_inst = (opcode[6:0] == 7'b1100111);
 assign j_type_ctrl = (opcode[6:0] == 7'b1101111);
@@ -52,20 +54,21 @@ assign pc_src = b_type_ctrl || jalr_inst || j_type_ctrl;
 /////////////////////////////////////
 //EX
 //alu_op r:10 b:01 i & s & jalr(i):00
-assign alu_op = ({2{r_type_ctrl}} & 2'b10)
+assign alu_op = ({2{r_type_ctrl || i_type_ctrl}} & 2'b10)
               | ({2{b_type_ctrl}} & 2'b01)
-              | ({2{i_type_ctrl || s_type_ctrl || jalr_inst}} & 2'b00);
-assign alu_src = i_type_ctrl || s_type_ctrl || jalr_inst;
+              | ({2{lw_inst || s_type_ctrl}} & 2'b00);
+assign alu_src = i_type_ctrl || s_type_ctrl;
+// ? jalr don't need alu, only need change alu result source TODO
 assign alu_res_src = jalr_inst;
 /////////////////////////////////////
 //MEM
-assign mem_read = i_type_ctrl;
+assign mem_read = lw_inst;
 assign mem_write = s_type_ctrl;
 assign branch = b_type_ctrl;
 /////////////////////////////////////
 //WB
-assign mem_to_reg = i_type_ctrl;
-assign reg_write = r_type_ctrl || s_type_ctrl;
+assign mem_to_reg = lw_inst;
+assign reg_write = r_type_ctrl || lw_inst || i_type_ctrl;
 /////////////////////////////////////
 
 
