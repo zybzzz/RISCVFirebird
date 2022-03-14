@@ -1,9 +1,9 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 09:35:21
-//  LastEditTime: 2022-03-14 10:22:14
+//  LastEditTime: 2022-03-14 10:44:28
 //  LastEditors: YiBo Zhang
-//  Description: 
+//  Description: this is ID/EX register
 //  
 /////////////////////////////////////
 `include "./fb_defines.v"
