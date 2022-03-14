@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-08 22:16:46
-//  LastEditTime: 2022-03-10 11:45:55
+//  LastEditTime: 2022-03-14 09:59:22
 //  LastEditors: YiBo Zhang
 //  Description: register file
 //  1. use posedge to write then use negedge to read to solve data hazard
@@ -36,6 +36,7 @@ always @(posedge clk ) begin
 end
 
 always @(negedge clk ) begin
+  // TODO error explain of write then read
   // read two data in one cycle (x0 is hardware 0)
   // data1
   rdata1 <= (raddr1 == 5'b0) ? 5'b0 : reg_array[raddr1]; 
