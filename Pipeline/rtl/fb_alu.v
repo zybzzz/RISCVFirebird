@@ -1,20 +1,111 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 14:09:50
-//  LastEditTime: 2022-03-14 23:25:00
+//  LastEditTime: 2022-03-15 10:43:31
 //  LastEditors: YiBo Zhang
 //  Description: this is alu
 //  
- /////////////////////////////////////
+/////////////////////////////////////
+`include "./fb_defines.v" 
 module fb_alu (
   input [10:0] alu_control,
   input [`FB_32BITS-1:0] op1,
   input [`FB_32BITS-1:0] op2,
-  output [`FB_32BITS-1:0] alu_res
-  // TODO some output csr signal
+  output [`FB_32BITS-1:0] alu_res,
+  output [3:0] csr,                   //NF ZF CF VF
+  output csr_write
 );
 
-// TODO operate by alu control signal
-// TODO when branch == 1 set csr
+
+wire op_add;
+wire op_sub;
+wire op_sll;          // shift left logic
+wire op_slt;          // set if less then 
+wire op_sltu;         // set if less than (unsign)
+wire op_xor;
+wire op_srl;          // shift right logic
+wire op_sra;          // shift right algorithm
+wire op_or;
+wire op_and;
+wire op_branch;       // * branch instruction and set csr 
+
+assign op_add = alu_control[10];
+assign op_sub = alu_control[9];
+assign op_sll = alu_control[8];          
+assign op_slt = alu_control[7];          
+assign op_sltu = alu_control[6];        
+assign op_xor = alu_control[5];
+assign op_srl = alu_control[4];          
+assign op_sra = alu_control[3];         
+assign op_or = alu_control[2];
+assign op_and = alu_control[1];
+assign op_branch = alu_control[0];
+
+wire [`FB_32BITS-1:0] add_sub_result;
+wire [`FB_32BITS-1:0] sll_result;
+wire [`FB_32BITS-1:0] slt_result;
+wire [`FB_32BITS-1:0] sltu_result;
+wire [`FB_32BITS-1:0] xor_result;
+wire [`FB_32BITS-1:0] srl_result;
+wire [`FB_32BITS-1:0] sra_result;
+wire [`FB_32BITS-1:0] or_result;
+wire [`FB_32BITS-1:0] and_result;
+
+assign xor_result = op1 ^ op2;
+assign or_result = op1 | op2;
+assign and_result = op1 & op2;
+
+// use for add
+wire [`FB_32BITS-1:0] adder_a;
+wire [`FB_32BITS-1:0] adder_b;
+wire adder_cin;
+wire [`FB_32BITS-1:0] adder_result;
+wire adder_cout;
+
+// use for set csr status
+wire NF;
+wire ZF;
+wire CF;
+wire VF;
+
+
+assign adder_a = op1;
+assign adder_b = (op_sub || op_slt || op_sltu) ? ~op2 : op2;
+assign adder_cin = (op_sub || op_slt || op_sltu) ? 1'b1 : 1'b0;
+assign {adder_cout, adder_result} = adder_a + adder_b + adder_cin;
+
+// set csr status
+assign NF = (adder_result[31] == 1'b1);
+assign ZF = (add_sub_result == 32'b0);
+assign CF = adder_cout;
+assign VF = ((adder_a[31] == 1'b0 && adder_b[31] == 1'b0 && adder_result[31] == 1'b1) ||
+              (adder_a[31] == 1'b1 && adder_b[31] == 1'b1 && adder_result[31] == 1'b0));
+assign csr = {NF, ZF, CF, VF};
+assign csr_write = op_branch;
+
+assign add_sub_result = adder_result;
+
+assign slt_result[31:1] = 31'b0;
+//TODO NF != VF maybe error 
+assign slt_result[0] = (NF != VF);
+
+assign sltu_result[31:1] = 31'b0;
+assign sltu_result[0] = ~CF;
+
+assign sll_result = op1 << op2[4:0];
+assign srl_result = op1 >> op2[4:0];
+assign sra_result = ($signal(op1)) >>> op2[4:0];
+
+assign alu_res = ({32{op_add | op_sub}} & add_sub_result)
+               | ({32{op_sll}} & sll_result)
+               | ({32{op_slt}} & slt_result)
+               | ({32{op_sltu}} & sltu_result)
+               | ({32{op_xor}} & xor_result)
+               | ({32{op_srl}} & srl_result)
+               | ({32{op_sra}} & sra_result)
+               | ({32{op_or}} & or_result)
+               | ({32{op_and}} & and_result);
+
+
   
 endmodule
