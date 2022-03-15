@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-10 09:11:45
-//  LastEditTime: 2022-03-13 12:57:45
+//  LastEditTime: 2022-03-14 22:44:54
 //  LastEditors: YiBo Zhang
 //  Description: generate imm number for different type instruction
 //  I B J S Type have imm, R Type don't have imm
@@ -15,7 +15,8 @@ module fb_imm_gen (
 ////////////////////////////////////////////////////////////
 // use ? : to replace case
 // spicing fron instruction and use operator code to select
-// I 00000|11
+// I 00000|11 (lw)
+//   00100|11 (calculate I-type)
 //   11001|11 (jalr --- I type)
 // S 01000|11
 // B 11000|11
@@ -26,7 +27,7 @@ module fb_imm_gen (
 ///////////////////////////////////////////////////////////
 wire [4:0]sel_opcode ;
 assign sel_opcode = inst[6:2];
-assign imm = (sel_opcode == 5'b00000 && sel_opcode == 5'b11001) ? {{20{inst[31]}},inst[31:20]}:
+assign imm = (sel_opcode == 5'b00000 || sel_opcode == 5'b11001 || sel_opcode == 5'b00100) ? {{20{inst[31]}},inst[31:20]}:
       (sel_opcode == 5'b01000) ? {{20{inst[31]}}, inst[31:25], inst[11:7]}:
       (sel_opcode == 5'b11000) ? {{20{inst[31]}}, inst[7], inst[30:25], inst[11:8], 1'b0}:  
       (sel_opcode == 5'b11011) ? {{13{inst[31]}}, inst[19:12], inst[20], inst[30:21]}:

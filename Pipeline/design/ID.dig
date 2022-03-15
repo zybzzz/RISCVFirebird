@@ -28,12 +28,12 @@
         </entry>
         <entry>
           <string>iverilogOptions</string>
-          <string>-I /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl
--y/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl</string>
+          <string>-I /Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl
+-y/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl</string>
         </entry>
         <entry>
           <string>CodeFile</string>
-          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl/fb_imm_gen.v</file>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl/fb_imm_gen.v</file>
         </entry>
       </elementAttributes>
       <pos x="260" y="320"/>
@@ -63,15 +63,50 @@
         </entry>
         <entry>
           <string>iverilogOptions</string>
-          <string>-I /Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl
--y/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl</string>
+          <string>-I /Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl
+-y/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl</string>
         </entry>
         <entry>
           <string>CodeFile</string>
-          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/AssemblyLine/rtl/fb_hazard_detection_unit.v</file>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl/fb_hazard_detection_unit.v</file>
         </entry>
       </elementAttributes>
       <pos x="240" y="140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>ExternalFile</elementName>
+      <elementAttributes>
+        <entry>
+          <string>applicationType</string>
+          <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>fb_cu</string>
+        </entry>
+        <entry>
+          <string>externalInputs</string>
+          <string>opcode:7</string>
+        </entry>
+        <entry>
+          <string>Width</string>
+          <int>15</int>
+        </entry>
+        <entry>
+          <string>externalOutputs</string>
+          <string>alu_op:2,alu_src,alu_res_src,mem_read,mem_write,branch,mem_to_reg,reg_write</string>
+        </entry>
+        <entry>
+          <string>iverilogOptions</string>
+          <string>-I /Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl
+-y/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl</string>
+        </entry>
+        <entry>
+          <string>CodeFile</string>
+          <file>/Users/zhangyibo/riscvdesign/RISCVFirebird/Pipeline/rtl/fb_cu.v</file>
+        </entry>
+      </elementAttributes>
+      <pos x="540" y="300"/>
     </visualElement>
   </visualElements>
   <wires/>
