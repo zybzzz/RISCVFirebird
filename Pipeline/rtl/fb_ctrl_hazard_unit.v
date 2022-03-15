@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 20:13:41
-//  LastEditTime: 2022-03-15 20:29:33
+//  LastEditTime: 2022-03-15 23:22:07
 //  LastEditors: YiBo Zhang
 //  Description: this is control hazard unit 
 //  ! continuous branch question
@@ -9,7 +9,7 @@
 /////////////////////////////////////
 // Digital ports:
 // input: pc:32,inst:32,imm:32,branch,NF,ZF,CF,VF
-// output: address_src,predict_pc:32,predict_err_pc:32,register_rst
+// output: address_src,predict_pc:32,predict_err_pc:32,register_rst,pc_src
 /////////////////////////////////////
 `include "./fb_defines.v"
 module fb_ctrl_hazard_unit (
@@ -24,7 +24,8 @@ module fb_ctrl_hazard_unit (
   output address_src,                    //instruction address 0:predict_pc(success) 1:predict_err_pc(predict error)
   output [`FB_32BITS-1:0] predict_pc,                //pc generate by static prediction
   output [`FB_32BITS-1:0] predict_err_pc,            //pc when prediction error
-  output register_rst               //reset the IF/ID ID/EX EX/MEM when prediction error
+  output register_rst,               //reset the IF/ID ID/EX EX/MEM when prediction error
+  output pc_src                         //0:auto increase (pc + 1) 1: control unit predict address
 );
 
 
@@ -43,6 +44,8 @@ wire bgeu_ins;
 assign j_type = (pc[6:0] == 7'b1101111);
 assign jalr_type = (pc[6:0] == 7'b 1100111);
 assign b_type = (pc[6:0] == 7'b1100011);
+
+assign pc_src = j_type | jalr_type | b_type;
 
 assign beq_ins = (inst[14:12] == 3'b000);
 assign bne_ins = (inst[14:12] == 3'b001);
@@ -73,7 +76,7 @@ assign is_predict_error = ((branch & b_type & beq_ins) & (ZF == 1'b0))
                         | ((branch & b_type & bge_ins) & (NF != VF))
                         | ((branch & b_type & bltu_ins) & (CF == 1'b1))
                         | ((branch & b_type & bgeu_ins) & (CF == 1'b0));
-//change pc_scr and register_rst status when predict error
+//change predict address and register_rst status when predict error
 assign address_src = is_predict_error;
 assign register_rst = is_predict_error;
 
