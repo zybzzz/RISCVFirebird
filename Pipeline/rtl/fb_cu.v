@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 19:18:52
-//  LastEditTime: 2022-03-14 20:40:21
+//  LastEditTime: 2022-03-15 11:45:37
 //  LastEditors: YiBo Zhang
 //  Description: this is cu, generatint different signal for EX/MEM/WB
 //  
@@ -50,14 +50,15 @@ assign j_type_ctrl = (opcode[6:0] == 7'b1101111);
 
 /////////////////////////////////////
 //IF
-assign pc_src = b_type_ctrl || jalr_inst || j_type_ctrl;
+assign pc_src = b_type_ctrl | jalr_inst | j_type_ctrl;
 /////////////////////////////////////
 //EX
 //alu_op r:10 b:01 i & s & jalr(i):00
-assign alu_op = ({2{r_type_ctrl || i_type_ctrl}} & 2'b10)
+assign alu_op = ({2{r_type_ctrl}} & 2'b10)
               | ({2{b_type_ctrl}} & 2'b01)
-              | ({2{lw_inst || s_type_ctrl}} & 2'b00);
-assign alu_src = i_type_ctrl || s_type_ctrl;
+              | ({2{lw_inst | s_type_ctrl}} & 2'b00)
+              | ({2{i_type_ctrl}} & 2'b11);
+assign alu_src = i_type_ctrl | s_type_ctrl;
 // ? jalr don't need alu, only need change alu result source TODO
 assign alu_res_src = jalr_inst;
 /////////////////////////////////////
@@ -68,7 +69,7 @@ assign branch = b_type_ctrl;
 /////////////////////////////////////
 //WB
 assign mem_to_reg = lw_inst;
-assign reg_write = r_type_ctrl || lw_inst || i_type_ctrl;
+assign reg_write = r_type_ctrl | lw_inst | i_type_ctrl;
 /////////////////////////////////////
 
 
