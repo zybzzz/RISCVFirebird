@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 22:50:40
-//  LastEditTime: 2022-03-14 22:55:40
+//  LastEditTime: 2022-03-15 11:48:26
 //  LastEditors: YiBo Zhang
 //  Description: this is csr only store calculate status
 //  
@@ -9,10 +9,7 @@
 module fb_csr (
   input clk,
   input we,
-  input IN_NF,
-  input IN_ZF,
-  input IN_CF,
-  input IN_VF,
+  input [3:0] csr,
   output reg NF,
   output reg ZF,
   output reg CF,
@@ -21,10 +18,10 @@ module fb_csr (
 
 always @(posedge clk ) begin
   if (we == 1) begin
-    NF <= IN_NF;
-    ZF <= IN_ZF;
-    CF <= IN_CF;
-    VF <= IN_VF;
+    NF <= csr[3];
+    ZF <= csr[2];
+    CF <= csr[1];
+    VF <= csr[0];
   end  
 end
 
