@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 22:49:51
-//  LastEditTime: 2022-03-15 09:58:23
+//  LastEditTime: 2022-03-15 10:57:29
 //  LastEditors: YiBo Zhang
 //  Description: alu control generate control signal for alu
 //  
@@ -11,7 +11,7 @@ module fb_alu_ctrl (
   input [1:0] alu_op,
   input [6:0] func7,
   input [2:0] func3,
-  output [10:0] alu_control
+  output [18:0] alu_control
 );
 
 /////////////////////////////////////////
@@ -32,7 +32,6 @@ assign r_type = (alu_op == 2'b10);
 assign i_type = (alu_op == 2'b11);
 
 
-//TODO op_mul
 wire op_add;
 wire op_sub;
 wire op_sll;          // shift left logic
@@ -45,6 +44,7 @@ wire op_or;
 wire op_and;
 wire op_branch;       // * let alu know branch instruction and set csr 
 
+// ! use || or |, maybe error
 assign op_add = (l_s_type || 
                   (i_type && func3 == 3'b000) || 
                   (r_type && func3 == 3'b000 &&func7[5] == 0));               //lw sw add addi
@@ -62,9 +62,29 @@ assign op_or = ((r_type || i_type) && func3 == 3'b110);                       //
 assign op_and = ((r_type || i_type) && func3 == 3'b111);                      //and andi
 assign op_branch = b_type;                                                    //branch instruction
 
+//////////////////////////////////////
+// * RV32M
+wire op_mul;
+wire op_mulh;
+wire op_mulhsu;
+wire op_mulhu;
+wire op_div;
+wire op_divu;
+wire op_rem;
+wire op_remu;
+assign op_mul = (r_type && (func7[0] == 1'b0) && (func3 == 3'b000));
+assign op_mulh = (r_type && (func7[0] == 1'b0) && (func3 == 3'b001));
+assign op_mulhsu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b010));
+assign op_mulhu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b011));
+assign op_div = (r_type && (func7[0] == 1'b0) && (func3 == 3'b100));
+assign op_divu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b101));
+assign op_rem = (r_type && (func7[0] == 1'b0) && (func3 == 3'b110));
+assign op_remu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b111));
+//////////////////////////////////////
 
-
-assign alu_control = {op_add, op_sub, op_sll, op_slt, op_sltu,
+assign alu_control = {op_mul, op_mulh, op_mulhsu, op_mulhu,                 //RV32M
+                      op_div, op_divu, op_rem, op_remu,
+                      op_add, op_sub, op_sll, op_slt, op_sltu,              //RV32I
                       op_xor, op_srl, op_sra, op_or, op_and, op_branch};
 
 endmodule
