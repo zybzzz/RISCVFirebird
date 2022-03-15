@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-08 22:16:46
-//  LastEditTime: 2022-03-14 09:59:22
+//  LastEditTime: 2022-03-15 16:10:21
 //  LastEditors: YiBo Zhang
 //  Description: register file
 //  1. use posedge to write then use negedge to read to solve data hazard
@@ -16,10 +16,14 @@ module fb_regfile (
   input we,           // write enable
   input [4:0] waddr,
   input [`FB_32BITS-1:0] wdata,
-  output reg [`FB_32BITS-1:0] rdata1,     //write in negedge, so define as reg type FIXME:need test
-  output reg [`FB_32BITS-1:0] rdata2
+  output [`FB_32BITS-1:0] rdata1,     //write in negedge, so define as reg type FIXME:need test
+  output [`FB_32BITS-1:0] rdata2
 );
-
+/////////////////////////////////////
+//Digital ports:
+//input: clk,reset,raddr1:5,raddr2:5,we,waddr:5,wdata:32
+//output: rdata1:32,rdata2:32
+/////////////////////////////////////
 reg [`FB_32BITS-1:0] reg_array[31:0];
 integer i;
 
@@ -35,14 +39,12 @@ always @(posedge clk ) begin
     if(we == 1) reg_array[waddr] <= wdata;
 end
 
-always @(negedge clk ) begin
-  // TODO error explain of write then read
-  // read two data in one cycle (x0 is hardware 0)
-  // data1
-  rdata1 <= (raddr1 == 5'b0) ? 5'b0 : reg_array[raddr1]; 
-  // data2
-  rdata2 <= (raddr2 == 5'b0) ? 5'b0 : reg_array[raddr2]; 
-end
+// read two data in one cycle (x0 is hardware 0)
+// data1
+assign rdata1 = (raddr1 == 5'b0) ? 5'b0 : reg_array[raddr1]; 
+// data2
+assign rdata2 = (raddr2 == 5'b0) ? 5'b0 : reg_array[raddr2]; 
+
 
 
 endmodule

@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 22:49:51
-//  LastEditTime: 2022-03-15 10:57:29
+//  LastEditTime: 2022-03-15 17:26:58
 //  LastEditors: YiBo Zhang
 //  Description: alu control generate control signal for alu
 //  
@@ -13,6 +13,12 @@ module fb_alu_ctrl (
   input [2:0] func3,
   output [18:0] alu_control
 );
+////////////////////////////////////////
+//Digital ports:
+//input: alu_op:2,func7:7,func3:3
+//output: alu_control:19
+////////////////////////////////////////
+
 
 /////////////////////////////////////////
 // *        alu_op          instruction

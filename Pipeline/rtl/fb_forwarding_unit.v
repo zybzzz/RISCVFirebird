@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 08:29:05
-//  LastEditTime: 2022-03-14 09:19:33
+//  LastEditTime: 2022-03-15 19:45:43
 //  LastEditors: YiBo Zhang
 //  Description: this is data forwarding unit
 //  
@@ -17,6 +17,11 @@ module fb_forwarding_unit (
   output [1:0] forward_a,           //control the alu source1 data from
   output [1:0] forward_b            //control the alu source2 data from
 );
+///////////////////////////////////////
+// Digital ports:
+// input: id_ex_register_rs1:5,id_ex_register_rs2:5,ex_mem_regwrite,ex_mem_register_rd:5,mem_wb_regwrite,mem_wb_register_rd:5
+// output: forward_a:2,forward_b:2
+///////////////////////////////////////
 /////////////////////////////////////////////////
 // forwarding code              comment
 //      00                 data come from reg_file

@@ -1,10 +1,15 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 22:50:40
-//  LastEditTime: 2022-03-15 11:48:26
+//  LastEditTime: 2022-03-15 20:21:02
 //  LastEditors: YiBo Zhang
 //  Description: this is csr only store calculate status
 //  
+/////////////////////////////////////
+/////////////////////////////////////
+// Digital ports:
+// input: clk,we,csr:4
+// output: NF,ZF,CF,VF
 /////////////////////////////////////
 module fb_csr (
   input clk,

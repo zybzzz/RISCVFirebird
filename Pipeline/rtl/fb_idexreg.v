@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 09:35:21
-//  LastEditTime: 2022-03-14 20:53:11
+//  LastEditTime: 2022-03-15 16:44:53
 //  LastEditors: YiBo Zhang
 //  Description: this is ID/EX register
 //  
@@ -13,7 +13,7 @@ module fb_idexreg (
   input rst,
   // input
   // * ex control signal
-  input [1:0] id_alu_op,
+  // input [1:0] id_alu_op,
   input id_alu_src,
   input id_alu_res_src,
   // * mem control signal
@@ -33,16 +33,15 @@ module fb_idexreg (
   input [4:0] id_register_rs1,
   input [4:0] id_register_rs2,
   input [4:0] id_register_rd,
-  // * function field
-  input [6:0] id_func7,
-  input [2:0] id_func3, 
+  // * alu control
+  input [18:0] id_alu_control,
   ///////////////////////////////////////
   //Digital ports:
-  //input: clk,we,rst,id_alu_op:2,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_func7:7,id_func3:3
-  //output: ex_alu_op:2,ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_func7:7,ex_func3:3
+  //input: clk,we,rst,id_alu_op:2,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19
+  //output: ex_alu_op:2,ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_alu_control:19
   ///////////////////////////////////////
   //output control signal
-  output reg [1:0] ex_alu_op,
+  // output reg [1:0] ex_alu_op,
   output reg ex_alu_src,
   output reg ex_alu_res_src,
   output reg ex_mem_read,
@@ -61,13 +60,12 @@ module fb_idexreg (
   output reg [4:0] ex_register_rs2,
   output reg [4:0] ex_register_rd,
   //output function field num
-  output reg [6:0] ex_func7,
-  output reg [2:0] ex_func3
+  output reg [18:0] ex_alu_control
 );
 
 always @(posedge clk ) begin
   if(rst == 1) begin
-    ex_alu_op <= 2'b0;
+    // ex_alu_op <= 2'b0;
     ex_alu_src <= 0;
     ex_alu_res_src <= 0;
     ex_mem_read <= 0;
@@ -82,12 +80,11 @@ always @(posedge clk ) begin
     ex_register_rs1 <= 5'b0;
     ex_register_rs2 <= 5'b0;
     ex_register_rd <= 5'b0;
-    ex_func7<=7'b0;
-    ex_func3<=3'b0;
+    ex_alu_control <= 19'b0;
   end
   else begin
     if(we == 1) begin
-      ex_alu_op <= id_alu_op;
+      // ex_alu_op <= id_alu_op;
       ex_alu_src <= id_alu_src;
       ex_alu_res_src <= id_alu_res_src;
       ex_mem_read <= id_mem_read;
@@ -102,8 +99,7 @@ always @(posedge clk ) begin
       ex_register_rs1 <= id_register_rs1;
       ex_register_rs2 <= id_register_rs2;
       ex_register_rd <= id_register_rd;
-      ex_func7<=id_func7;
-      ex_func3<=id_func3;
+      ex_alu_control <= id_alu_control;
     end
   end
 end

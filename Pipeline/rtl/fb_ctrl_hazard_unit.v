@@ -1,10 +1,15 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 20:13:41
-//  LastEditTime: 2022-03-15 12:20:44
+//  LastEditTime: 2022-03-15 20:29:33
 //  LastEditors: YiBo Zhang
 //  Description: this is control hazard unit 
 //  ! continuous branch question
+/////////////////////////////////////
+/////////////////////////////////////
+// Digital ports:
+// input: pc:32,inst:32,imm:32,branch,NF,ZF,CF,VF
+// output: address_src,predict_pc:32,predict_err_pc:32,register_rst
 /////////////////////////////////////
 `include "./fb_defines.v"
 module fb_ctrl_hazard_unit (
@@ -17,8 +22,8 @@ module fb_ctrl_hazard_unit (
   input CF,
   input VF,                         //csr status
   output address_src,                    //instruction address 0:predict_pc(success) 1:predict_err_pc(predict error)
-  output predict_pc,                //pc generate by static prediction
-  output predict_err_pc,            //pc when prediction error
+  output [`FB_32BITS-1:0] predict_pc,                //pc generate by static prediction
+  output [`FB_32BITS-1:0] predict_err_pc,            //pc when prediction error
   output register_rst               //reset the IF/ID ID/EX EX/MEM when prediction error
 );
 

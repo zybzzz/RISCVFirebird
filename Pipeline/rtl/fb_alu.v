@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 14:09:50
-//  LastEditTime: 2022-03-15 11:31:59
+//  LastEditTime: 2022-03-15 17:38:17
 //  LastEditors: YiBo Zhang
 //  Description: this is alu
 //  
@@ -15,7 +15,11 @@ module fb_alu (
   output [3:0] csr,                   //NF ZF CF VF
   output csr_write
 );
-
+////////////////////////////////////
+//Digital ports:
+//input: alu_control:19,op1:32,op2:32
+//output: alu_res:32,csr:4,csr_write
+////////////////////////////////////
 wire op_mul;
 wire op_mulh;
 wire op_mulhsu;
@@ -76,12 +80,12 @@ wire [`FB_32BITS-1:0] and_result;
 
 /////////////////////////////////////////////
 // * RV32M
-assign {mulh_result, mul_result} = $signal(op1) * $signal(op2);
+assign {mulh_result, mul_result} = $signed(op1) * $signed(op2);
 assign mulhsu_result = 32'b0;             //TODO wait for fix
 assign mulhu_result = 32'b0;
-assign div_result = $signal(op1) / $signal(op2);
+assign div_result = $signed(op1) / $signed(op2);
 assign divu_result = op1 / op2;
-assign rem_result = $signal(op1) % $signal(op2);
+assign rem_result = $signed(op1) % $signed(op2);
 assign remu_result = op1 % op2;
 /////////////////////////////////////////////
 
@@ -129,7 +133,7 @@ assign sltu_result[0] = ~CF;
 
 assign sll_result = op1 << op2[4:0];
 assign srl_result = op1 >> op2[4:0];
-assign sra_result = ($signal(op1)) >>> op2[4:0];
+assign sra_result = ($signed(op1)) >>> op2[4:0];
 
 assign alu_res = ({32{op_mul}} & mul_result)
                | ({32{op_mulh}} & mulh_result)

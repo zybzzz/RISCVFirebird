@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 13:39:48
-//  LastEditTime: 2022-03-14 14:08:36
+//  LastEditTime: 2022-03-15 19:38:23
 //  LastEditors: YiBo Zhang
 //  Description: this is data mux use for forwarding
 //  2 - 4 multiplexer
@@ -13,6 +13,11 @@
 // *          00          data come from register
 // *          10          data come from alu result
 // *          01          data come from memory or alu result long from before
+/////////////////////////////////////
+/////////////////////////////////////
+// Digital ports:
+// input: sel:2,reg_data:32,forward_10_data:32,forward_01_data:32
+// output: d:32
 /////////////////////////////////////
 `include "./fb_defines.v"
 module fb_fwdmux (
