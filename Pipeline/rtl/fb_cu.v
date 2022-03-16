@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 19:18:52
-//  LastEditTime: 2022-03-16 15:20:28
+//  LastEditTime: 2022-03-16 19:23:30
 //  LastEditors: YiBo Zhang
 //  Description: this is cu, generatint different signal for EX/MEM/WB
 //  
@@ -17,7 +17,8 @@ module fb_cu (
   output branch,
   output mem_to_reg,
   output reg_write,
-  output pc_src
+  // output pc_src,
+  output jalr_en
 );
 
 ////////////////////////////////////////
@@ -51,7 +52,10 @@ assign j_type_ctrl = (opcode[6:0] == 7'b1101111);
 
 /////////////////////////////////////
 //IF
-assign pc_src = b_type_ctrl | jalr_inst | j_type_ctrl;
+// assign pc_src = b_type_ctrl | jalr_inst | j_type_ctrl;
+/////////////////////////////////////
+//control hazard unit
+assign jalr_en = jalr_inst;
 /////////////////////////////////////
 //EX
 //alu_op r:10 b:01 i & s & jalr(i):00

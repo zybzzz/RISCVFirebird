@@ -1,10 +1,1 @@
-
-jal test
-
-
-
-
-
-
-
-test:
+jalr ra, t1, 100

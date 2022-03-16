@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,we,rst,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19</string>
+          <string>clk,we,rst,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -60,12 +60,12 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>we</string>
-        </entry>
-        <entry>
           <string>Description</string>
           <string>写使能</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>we</string>
         </entry>
       </elementAttributes>
       <pos x="200" y="160"/>
@@ -389,14 +389,14 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>e1</string>
-        </entry>
-        <entry>
           <string>Description</string>
           <string>alusrc:alu其中一个数据源源于rs2或是立即数
 0 -&gt; rs2
 1 -&gt; 立即数</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e1</string>
         </entry>
       </elementAttributes>
       <pos x="600" y="140"/>
@@ -686,6 +686,24 @@
       </elementAttributes>
       <pos x="600" y="420"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>流水线停顿信号</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>lk</string>
+        </entry>
+      </elementAttributes>
+      <pos x="200" y="500"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -791,6 +809,10 @@
     <wire>
       <p1 x="560" y="340"/>
       <p2 x="600" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="200" y="500"/>
+      <p2 x="240" y="500"/>
     </wire>
     <wire>
       <p1 x="200" y="280"/>
