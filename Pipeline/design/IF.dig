@@ -105,7 +105,7 @@
         </entry>
         <entry>
           <string>Data</string>
-          <data>64300e7</data>
+          <data>500313,393,e13,63a523</data>
         </entry>
         <entry>
           <string>intFormat</string>
@@ -204,16 +204,16 @@
       <elementName>In</elementName>
       <elementAttributes>
         <entry>
+          <string>Description</string>
+          <string>用于jalr产生的一周期暂停</string>
+        </entry>
+        <entry>
           <string>Label</string>
           <string>clr</string>
         </entry>
         <entry>
           <string>pinNumber</string>
           <string>5</string>
-        </entry>
-        <entry>
-          <string>Description</string>
-          <string>用于jalr产生的一周期暂停</string>
         </entry>
       </elementAttributes>
       <pos x="-160" y="440"/>
