@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 19:18:52
-//  LastEditTime: 2022-03-15 11:45:37
+//  LastEditTime: 2022-03-16 15:20:28
 //  LastEditors: YiBo Zhang
 //  Description: this is cu, generatint different signal for EX/MEM/WB
 //  
@@ -38,6 +38,7 @@ wire i_type_ctrl;
 wire s_type_ctrl;
 wire lw_inst;
 wire jalr_inst;
+wire j_type_ctrl;
 
 // judge what type of instruction
 assign r_type_ctrl = (opcode[6:0] == 7'b0110011);
@@ -60,7 +61,7 @@ assign alu_op = ({2{r_type_ctrl}} & 2'b10)
               | ({2{i_type_ctrl}} & 2'b11);
 assign alu_src = i_type_ctrl | s_type_ctrl;
 // ? jalr don't need alu, only need change alu result source TODO
-assign alu_res_src = jalr_inst;
+assign alu_res_src = jalr_inst | j_type_ctrl;
 /////////////////////////////////////
 //MEM
 assign mem_read = lw_inst;
@@ -69,7 +70,8 @@ assign branch = b_type_ctrl;
 /////////////////////////////////////
 //WB
 assign mem_to_reg = lw_inst;
-assign reg_write = r_type_ctrl | lw_inst | i_type_ctrl;
+// * jal and jalr also need write register
+assign reg_write = r_type_ctrl | lw_inst | i_type_ctrl | jalr_inst | j_type_ctrl;
 /////////////////////////////////////
 
 

@@ -1,14 +1,14 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 20:13:41
-//  LastEditTime: 2022-03-15 23:22:07
+//  LastEditTime: 2022-03-16 16:44:23
 //  LastEditors: YiBo Zhang
 //  Description: this is control hazard unit 
 //  ! continuous branch question
 /////////////////////////////////////
 /////////////////////////////////////
 // Digital ports:
-// input: pc:32,inst:32,imm:32,branch,NF,ZF,CF,VF
+// input: pc:32,inst:32,imm:32,branch,NF,ZF,CF,VF,rs1_data:32
 // output: address_src,predict_pc:32,predict_err_pc:32,register_rst,pc_src
 /////////////////////////////////////
 `include "./fb_defines.v"
@@ -21,6 +21,7 @@ module fb_ctrl_hazard_unit (
   input ZF,
   input CF,
   input VF,                         //csr status
+  input [`FB_32BITS-1:0] rs1_data,       // rs1 data use for jalr
   output address_src,                    //instruction address 0:predict_pc(success) 1:predict_err_pc(predict error)
   output [`FB_32BITS-1:0] predict_pc,                //pc generate by static prediction
   output [`FB_32BITS-1:0] predict_err_pc,            //pc when prediction error
@@ -41,9 +42,9 @@ wire bltu_ins;
 wire bgeu_ins;
 
 
-assign j_type = (pc[6:0] == 7'b1101111);
-assign jalr_type = (pc[6:0] == 7'b 1100111);
-assign b_type = (pc[6:0] == 7'b1100011);
+assign j_type = (inst[6:0] == 7'b1101111);
+assign jalr_type = (inst[6:0] == 7'b 1100111);
+assign b_type = (inst[6:0] == 7'b1100011);
 
 assign pc_src = j_type | jalr_type | b_type;
 
@@ -59,7 +60,7 @@ wire [`FB_32BITS-1:0] offset;
 assign offset = imm;
 
 assign predict_pc = (j_type) ? pc + offset :                //jal
-             (jalr_type) ? ((pc + offset) & (~32'b1)) :     //jalr
+             (jalr_type) ? ((rs1_data + offset) & (~32'b1)) :     //jalr
              (offset[`FB_32BITS-1] == 1)? pc + offset :     //b-type jump back
              pc + 1;                                        //b-type jump front
 

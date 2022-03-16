@@ -1,1 +1,10 @@
-addi t0,zero,5
+
+jal test
+
+
+
+
+
+
+
+test:
