@@ -144,10 +144,6 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>runRealTime</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
           <string>Label</string>
           <string>clk</string>
         </entry>
@@ -1882,12 +1878,12 @@
       <elementName>RAMDualPort</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>mem</string>
-        </entry>
-        <entry>
           <string>AddrBits</string>
           <int>10</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>mem</string>
         </entry>
         <entry>
           <string>Bits</string>
@@ -2363,7 +2359,7 @@
         </entry>
         <entry>
           <string>NetName</string>
-          <string>rd</string>
+          <string>mwrd</string>
         </entry>
       </elementAttributes>
       <pos x="-420" y="-40"/>
@@ -2381,6 +2377,21 @@
         </entry>
       </elementAttributes>
       <pos x="-680" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>mwrd</string>
+        </entry>
+      </elementAttributes>
+      <pos x="60" y="440"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Probe</elementName>
+      <elementAttributes/>
+      <pos x="-1220" y="-360"/>
     </visualElement>
   </visualElements>
   <wires>
@@ -3067,6 +3078,10 @@
     <wire>
       <p1 x="240" y="440"/>
       <p2 x="340" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="20" y="440"/>
+      <p2 x="60" y="440"/>
     </wire>
     <wire>
       <p1 x="-520" y="-380"/>
