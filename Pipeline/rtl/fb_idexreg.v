@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 09:35:21
-//  LastEditTime: 2022-03-16 19:19:56
+//  LastEditTime: 2022-03-17 17:00:15
 //  LastEditors: YiBo Zhang
 //  Description: this is ID/EX register
 //  
@@ -37,6 +37,9 @@ module fb_idexreg (
   input [18:0] id_alu_control,
   // * lock
   input lock,
+  // * branch instruction
+  input [`FB_32BITS-1:0] id_pc,
+  input [5:0] id_bra_control,
   ///////////////////////////////////////
   //Digital ports:
   //input: clk,we,rst,id_alu_op:2,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock
@@ -62,7 +65,10 @@ module fb_idexreg (
   output reg [4:0] ex_register_rs2,
   output reg [4:0] ex_register_rd,
   //output function field num
-  output reg [18:0] ex_alu_control
+  output reg [18:0] ex_alu_control,
+  //output for branch instruction
+  output reg [`FB_32BITS-1:0] ex_pc,
+  output reg [5:0] ex_bra_control
 );
 
 wire zero;
@@ -86,6 +92,8 @@ always @(posedge clk ) begin
     ex_register_rs2 <= 5'b0;
     ex_register_rd <= 5'b0;
     ex_alu_control <= 19'b0;
+    ex_pc <= 32'b0;
+    ex_bra_control <= 6'b0;
   end
   else begin
     if(we == 1) begin
@@ -97,6 +105,7 @@ always @(posedge clk ) begin
         ex_branch <= zero;
         ex_mem_to_reg <= zero;
         ex_reg_write <= zero;
+        ex_bra_control <= 6'b0;
       end
       else begin
         // ex_alu_op <= id_alu_op;
@@ -115,6 +124,8 @@ always @(posedge clk ) begin
         ex_register_rs2 <= id_register_rs2;
         ex_register_rd <= id_register_rd;
         ex_alu_control <= id_alu_control;
+        ex_pc <= id_pc;
+        ex_bra_control <= id_bra_control;
       end
     end
   end

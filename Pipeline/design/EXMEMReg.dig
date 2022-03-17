@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,we,rst,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_alu_res:32,ex_rs2_data:32,ex_register_rd:5</string>
+          <string>clk,we,rst,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_alu_res:32,ex_rs2_data:32,ex_register_rd:5,ex_pc:32,ex_imm:32,ex_bra_control:6</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -24,7 +24,7 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>mem_mem_read,mem_mem_write,mem_branch,mem_mem_to_reg,mem_reg_write,mem_alu_res:32,mem_rs2_data:32,mem_register_rd:5</string>
+          <string>mem_mem_read,mem_mem_write,mem_branch,mem_mem_to_reg,mem_reg_write,mem_alu_res:32,mem_rs2_data:32,mem_register_rd:5,mem_pc:32,mem_imm:32,mem_bra_control:6</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
@@ -60,12 +60,12 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>we</string>
-        </entry>
-        <entry>
           <string>Description</string>
           <string>写使能</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>we</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="220"/>
@@ -254,12 +254,12 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>m1</string>
-        </entry>
-        <entry>
           <string>Description</string>
           <string>存储器读</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>m1</string>
         </entry>
       </elementAttributes>
       <pos x="660" y="200"/>
@@ -404,16 +404,140 @@
       </elementAttributes>
       <pos x="660" y="340"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e10</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>ex阶段传来的imm,用于branch</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="440"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>ex阶段传来的pc，用于branch</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e9</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>ex阶段传来的bra控制信号</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e11</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="460"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>m9</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>ex阶段传来的pc，用于branch</string>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="360"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>ex阶段传来的imm,用于branch</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>m10</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>ex阶段传来的bra控制信号</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>m11</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="400"/>
+    </visualElement>
   </visualElements>
   <wires>
-    <wire>
-      <p1 x="140" y="240"/>
-      <p2 x="240" y="240"/>
-    </wire>
-    <wire>
-      <p1 x="560" y="240"/>
-      <p2 x="660" y="240"/>
-    </wire>
     <wire>
       <p1 x="140" y="320"/>
       <p2 x="240" y="320"/>
@@ -421,10 +545,6 @@
     <wire>
       <p1 x="560" y="320"/>
       <p2 x="660" y="320"/>
-    </wire>
-    <wire>
-      <p1 x="140" y="400"/>
-      <p2 x="240" y="400"/>
     </wire>
     <wire>
       <p1 x="140" y="260"/>
@@ -435,12 +555,8 @@
       <p2 x="660" y="260"/>
     </wire>
     <wire>
-      <p1 x="140" y="340"/>
-      <p2 x="240" y="340"/>
-    </wire>
-    <wire>
-      <p1 x="560" y="340"/>
-      <p2 x="660" y="340"/>
+      <p1 x="140" y="420"/>
+      <p2 x="240" y="420"/>
     </wire>
     <wire>
       <p1 x="140" y="200"/>
@@ -451,24 +567,12 @@
       <p2 x="660" y="200"/>
     </wire>
     <wire>
-      <p1 x="140" y="280"/>
-      <p2 x="240" y="280"/>
-    </wire>
-    <wire>
-      <p1 x="560" y="280"/>
-      <p2 x="660" y="280"/>
-    </wire>
-    <wire>
       <p1 x="140" y="360"/>
       <p2 x="240" y="360"/>
     </wire>
     <wire>
-      <p1 x="140" y="220"/>
-      <p2 x="240" y="220"/>
-    </wire>
-    <wire>
-      <p1 x="560" y="220"/>
-      <p2 x="660" y="220"/>
+      <p1 x="560" y="360"/>
+      <p2 x="660" y="360"/>
     </wire>
     <wire>
       <p1 x="140" y="300"/>
@@ -479,8 +583,60 @@
       <p2 x="660" y="300"/>
     </wire>
     <wire>
+      <p1 x="140" y="460"/>
+      <p2 x="240" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="240"/>
+      <p2 x="240" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="240"/>
+      <p2 x="660" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="400"/>
+      <p2 x="240" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="400"/>
+      <p2 x="660" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="340"/>
+      <p2 x="240" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="340"/>
+      <p2 x="660" y="340"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="280"/>
+      <p2 x="240" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="280"/>
+      <p2 x="660" y="280"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="440"/>
+      <p2 x="240" y="440"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="220"/>
+      <p2 x="240" y="220"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="220"/>
+      <p2 x="660" y="220"/>
+    </wire>
+    <wire>
       <p1 x="140" y="380"/>
       <p2 x="240" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="380"/>
+      <p2 x="660" y="380"/>
     </wire>
   </wires>
   <measurementOrdering/>

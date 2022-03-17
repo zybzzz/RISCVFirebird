@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,we,rst,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock</string>
+          <string>clk,we,rst,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock,id_pc:32,id_bra_control:6</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -24,7 +24,7 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_alu_control:19</string>
+          <string>ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_alu_control:19,ex_pc:32,ex_bra_control:6</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
@@ -704,6 +704,94 @@
       </elementAttributes>
       <pos x="200" y="500"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>id阶段的pc，用于branch</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>i16</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="200" y="520"/>
+    </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>branch控制信号</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>i17</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="200" y="540"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>branch控制信号</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e17</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>6</int>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="460"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>id阶段传过来的pc，用于branch</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e16</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="440"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -759,6 +847,10 @@
       <p2 x="600" y="360"/>
     </wire>
     <wire>
+      <p1 x="200" y="520"/>
+      <p2 x="240" y="520"/>
+    </wire>
+    <wire>
       <p1 x="200" y="140"/>
       <p2 x="240" y="140"/>
     </wire>
@@ -777,6 +869,10 @@
     <wire>
       <p1 x="200" y="460"/>
       <p2 x="240" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="460"/>
+      <p2 x="600" y="460"/>
     </wire>
     <wire>
       <p1 x="200" y="240"/>
@@ -827,6 +923,10 @@
       <p2 x="240" y="440"/>
     </wire>
     <wire>
+      <p1 x="560" y="440"/>
+      <p2 x="600" y="440"/>
+    </wire>
+    <wire>
       <p1 x="200" y="220"/>
       <p2 x="240" y="220"/>
     </wire>
@@ -841,6 +941,10 @@
     <wire>
       <p1 x="560" y="380"/>
       <p2 x="600" y="380"/>
+    </wire>
+    <wire>
+      <p1 x="200" y="540"/>
+      <p2 x="240" y="540"/>
     </wire>
   </wires>
   <measurementOrdering/>
