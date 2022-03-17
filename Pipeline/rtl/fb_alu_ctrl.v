@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 22:49:51
-//  LastEditTime: 2022-03-15 17:26:58
+//  LastEditTime: 2022-03-17 09:06:47
 //  LastEditors: YiBo Zhang
 //  Description: alu control generate control signal for alu
 //  
@@ -28,9 +28,10 @@ module fb_alu_ctrl (
 // *         11            I-type(calculate)
 //TODO fix alu_op generate
 /////////////////////////////////////////
-wire l_s_type;
+wire l_s_inst;
 wire b_type;
-wire r_i_type;
+wire r_type;
+wire i_type;
 
 assign l_s_inst = (alu_op == 2'b00);
 assign b_type = (alu_op == 2'b01);
@@ -51,7 +52,7 @@ wire op_and;
 wire op_branch;       // * let alu know branch instruction and set csr 
 
 // ! use || or |, maybe error
-assign op_add = (l_s_type || 
+assign op_add = (l_s_inst || 
                   (i_type && func3 == 3'b000) || 
                   (r_type && func3 == 3'b000 &&func7[5] == 0));               //lw sw add addi
 
@@ -78,14 +79,14 @@ wire op_div;
 wire op_divu;
 wire op_rem;
 wire op_remu;
-assign op_mul = (r_type && (func7[0] == 1'b0) && (func3 == 3'b000));
-assign op_mulh = (r_type && (func7[0] == 1'b0) && (func3 == 3'b001));
-assign op_mulhsu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b010));
-assign op_mulhu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b011));
-assign op_div = (r_type && (func7[0] == 1'b0) && (func3 == 3'b100));
-assign op_divu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b101));
-assign op_rem = (r_type && (func7[0] == 1'b0) && (func3 == 3'b110));
-assign op_remu = (r_type && (func7[0] == 1'b0) && (func3 == 3'b111));
+assign op_mul = (r_type && (func7[0] == 1'b1) && (func3 == 3'b000));
+assign op_mulh = (r_type && (func7[0] == 1'b1) && (func3 == 3'b001));
+assign op_mulhsu = (r_type && (func7[0] == 1'b1) && (func3 == 3'b010));
+assign op_mulhu = (r_type && (func7[0] == 1'b1) && (func3 == 3'b011));
+assign op_div = (r_type && (func7[0] == 1'b1) && (func3 == 3'b100));
+assign op_divu = (r_type && (func7[0] == 1'b1) && (func3 == 3'b101));
+assign op_rem = (r_type && (func7[0] == 1'b1) && (func3 == 3'b110));
+assign op_remu = (r_type && (func7[0] == 1'b1) && (func3 == 3'b111));
 //////////////////////////////////////
 
 assign alu_control = {op_mul, op_mulh, op_mulhsu, op_mulhu,                 //RV32M

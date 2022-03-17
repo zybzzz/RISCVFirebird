@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-08 22:16:46
-//  LastEditTime: 2022-03-16 23:49:30
+//  LastEditTime: 2022-03-17 07:55:45
 //  LastEditors: YiBo Zhang
 //  Description: register file
 //  1. use posedge to write then use negedge to read to solve data hazard
@@ -41,9 +41,9 @@ end
 
 // read two data in one cycle (x0 is hardware 0)
 // data1
-assign rdata1 = reg_array[raddr1]; 
+assign rdata1 = (raddr1 == waddr) ? wdata : reg_array[raddr1]; 
 // data2
-assign rdata2 = reg_array[raddr2]; 
+assign rdata2 = (raddr2 == waddr) ? wdata : reg_array[raddr2]; 
 
 
 

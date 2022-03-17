@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 19:18:52
-//  LastEditTime: 2022-03-16 19:23:30
+//  LastEditTime: 2022-03-17 08:38:59
 //  LastEditors: YiBo Zhang
 //  Description: this is cu, generatint different signal for EX/MEM/WB
 //  
@@ -63,7 +63,7 @@ assign alu_op = ({2{r_type_ctrl}} & 2'b10)
               | ({2{b_type_ctrl}} & 2'b01)
               | ({2{lw_inst | s_type_ctrl}} & 2'b00)
               | ({2{i_type_ctrl}} & 2'b11);
-assign alu_src = i_type_ctrl | s_type_ctrl;
+assign alu_src = i_type_ctrl | s_type_ctrl | lw_inst;
 // ? jalr don't need alu, only need change alu result source TODO
 assign alu_res_src = jalr_inst | j_type_ctrl;
 /////////////////////////////////////

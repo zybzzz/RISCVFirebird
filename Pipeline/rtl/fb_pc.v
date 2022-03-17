@@ -1,11 +1,11 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-08 21:55:49
-//  LastEditTime: 2022-03-16 21:33:27
+//  LastEditTime: 2022-03-17 09:36:22
 //  LastEditors: YiBo Zhang
 //  Description: This is cpu's pc 
 //  1. pc + 1 to find next commend(commend set in a rom, each room of rom are 32bit)
-//  2. pc_write to keep pc's value not to change in branch hazard
+//  2. pc_write to keep pc's value not to change in data hazard
 //  3. clear_inst use for jalr 1 clock lock, that will set output inst to 0.
 //    if not do that, there will generate 2 continuous jalr and than make error.
 /////////////////////////////////////
