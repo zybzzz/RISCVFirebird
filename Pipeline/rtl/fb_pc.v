@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-08 21:55:49
-//  LastEditTime: 2022-03-17 09:36:22
+//  LastEditTime: 2022-03-18 22:16:40
 //  LastEditors: YiBo Zhang
 //  Description: This is cpu's pc 
 //  1. pc + 1 to find next commend(commend set in a rom, each room of rom are 32bit)
@@ -23,6 +23,10 @@ module fb_pc (
 always @(posedge clk ) begin
   if(pc_clear == 1) begin
     clear_inst <= 1'b1;
+  end
+  // * must else, if not the clear_inst will always 1 and lock the pc 
+  else begin
+    clear_inst <= 1'b0;
   end
   if(pc_reset == 1) begin 
     out_address <= 32'b0;

@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-09 21:52:14
-//  LastEditTime: 2022-03-17 08:13:27
+//  LastEditTime: 2022-03-18 17:25:05
 //  LastEditors: YiBo Zhang
 //  Description: this is assembly line level register in IF/ID phrase
 //  1. pc use for branch 
@@ -17,9 +17,11 @@ module fb_ifidreg (
   input [`FB_32BITS-1:0] if_pc,     //pc from if phrase
   input [`FB_32BITS-1:0] if_pc_add_1,     //pc + 1 from if phrase
   input [`FB_32BITS-1:0] if_inst,   //instruction from if phrase
+  input [5:0] in_bra_control,       //bra control
   output reg [`FB_32BITS-1:0] id_pc,  //pc in reg present for id phrase read
   output reg [`FB_32BITS-1:0] id_pc_add_1,  //pc + 1 in reg use for jalr
-  output reg [`FB_32BITS-1:0] id_inst  //instruction in reg present for id phrase to read
+  output reg [`FB_32BITS-1:0] id_inst,  //instruction in reg present for id phrase to read
+  output reg [5:0] out_bra_control        //bra_control
 );
 
 // reg [`FB_32BITS-1:0] pc_register;
@@ -31,12 +33,14 @@ always @(posedge clk ) begin
     id_pc <= `FB_32BITS'b0;
     id_pc_add_1 <= `FB_32BITS'b0;
     id_inst <= `FB_32BITS'b0;
+    out_bra_control <= 6'b0;
   end
   else begin
     if (we == 1 && lock == 0) begin   //not lock data    
       id_pc <= if_pc;
       id_pc_add_1 <= if_pc_add_1;
       id_inst <= if_inst;
+      out_bra_control <= in_bra_control;
     end
   end
 end

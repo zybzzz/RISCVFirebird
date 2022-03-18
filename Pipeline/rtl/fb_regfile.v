@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-08 22:16:46
-//  LastEditTime: 2022-03-17 07:55:45
+//  LastEditTime: 2022-03-18 12:40:37
 //  LastEditors: YiBo Zhang
 //  Description: register file
 //  1. use posedge to write then use negedge to read to solve data hazard
@@ -36,14 +36,20 @@ always @(posedge clk ) begin
     //reg_array[4] <= 32'b111;  //just for test
   end
   else
-    if(we == 1) reg_array[waddr] <= wdata;
+    if(we == 1 && waddr != 5'b0) reg_array[waddr] <= wdata;
 end
 
 // read two data in one cycle (x0 is hardware 0)
 // data1
-assign rdata1 = (raddr1 == waddr) ? wdata : reg_array[raddr1]; 
+// assign rdata1 = (raddr1 == waddr) ? wdata : reg_array[raddr1];
+assign rdata1 = (raddr1 == 0) ? 32'b0 :
+                (raddr1 == waddr) ? wdata :
+                reg_array[raddr1];
 // data2
-assign rdata2 = (raddr2 == waddr) ? wdata : reg_array[raddr2]; 
+// assign rdata2 = (raddr2 == waddr) ? wdata : reg_array[raddr2]; 
+assign rdata2 = (raddr2 == 0) ? 32'b0 :
+                (raddr2 == waddr) ? wdata :
+                reg_array[raddr2];
 
 
 

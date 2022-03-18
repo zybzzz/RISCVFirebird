@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,lock,we,rst,if_pc:32,if_pc_add_1:32,if_inst:32</string>
+          <string>clk,lock,we,rst,if_pc:32,if_pc_add_1:32,if_inst:32,in_bra_control:6</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -24,7 +24,7 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>id_pc:32,id_inst:32,id_pc_add_1:32</string>
+          <string>id_pc:32,id_inst:32,id_pc_add_1:32,out_bra_control:6</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
@@ -258,6 +258,50 @@ C 1 1 1 1 1 1</dataString>
       </elementAttributes>
       <pos x="580" y="280"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>iac</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>6</int>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>输入的bra_control</string>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>oac</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>6</int>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>前面阶段传来的bra_control</string>
+        </entry>
+      </elementAttributes>
+      <pos x="580" y="300"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -299,6 +343,14 @@ C 1 1 1 1 1 1</dataString>
     <wire>
       <p1 x="140" y="300"/>
       <p2 x="260" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="480" y="300"/>
+      <p2 x="580" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="380"/>
+      <p2 x="260" y="380"/>
     </wire>
   </wires>
   <measurementOrdering/>
