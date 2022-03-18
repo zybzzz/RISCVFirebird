@@ -1,13 +1,22 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 20:13:41
-//  LastEditTime: 2022-03-17 20:25:03
+//  LastEditTime: 2022-03-18 09:29:05
 //  LastEditors: YiBo Zhang
 //  Description: this is control hazard unit 
-//  ! continuous branch question
 /////////////////////////////////////
+// * the control hazard unit work in IF / ID / MEM phase
+// * IF : calculate jal address, lock 1 clock when jalr, predict branch instruction address
+// * ID : calcuiate jalr address
+// * MEM: to verify whether prediction is true or false. And if false generate predict error address.
 /////////////////////////////////////
-// * the control hazard unit should be used in if phase
+// * thinking of design : 
+// * 1. use conbinational logic, not use temporal logic. temporal logic have delay time.
+// * 2. jal,jalr,branch instruction all will be handled by same unit. reducing component usage but 
+// * make logic complex.(Split it into 3 parts if necessary)
+// * 3. predict error has the highest priority.
+/////////////////////////////////////
+// * why jalr lock 1 clock and generate address in ID phase ? 
 // * if not, it will cause time hazard
 // * error example:
 // *    IF      /       ID       (judge and generate the next address)/
@@ -15,9 +24,19 @@
 // * * * * * * * * * * * * * * * * * * * * * * * * *
 // * correct example:
 // *    IF      (judge and generate the next address)/       ID       /
-// *            /(use address fetch instruction (after than judge))       IF       /       ID
+// *            /(use address fetch instruction (after the judge))       IF       /       ID
+// * * * * * * * * * * * * * * * * * * * * * * * * *
+// * add nop(no operation) instruction follow the jalr maybe a solution too.
 /////////////////////////////////////
-// * jalr must lock 1 clock
+// * continuous branch question（correctness of the program when facint continuous branch ）
+// * first should to know is control hazard unit can guarantee 1 branch execute correctly.
+// * two different case:
+// * branch1(predict succ) - branch2(predict succ) ... in this case execute correctly
+// * branch1(predict succ) - branch2(predict error) ... in this case the instructions before error 
+// * branch can execute correctly and the instruction will be flush(the after branch instructions
+// * will all be flush). Then PC will get predict error new address to fetch new instruction to execute.
+/////////////////////////////////////
+
 /////////////////////////////////////
 /////////////////////////////////////
 // Digital ports:
@@ -30,11 +49,6 @@ module fb_ctrl_hazard_unit (
   input [`FB_32BITS-1:0] pc,        //pc(use for jal and branch instruction)
   input [`FB_32BITS-1:0] inst,      //instruction(use for jal and branch instruction)
   ////////////////////////////////////////
-  // * why add ex_mem_pc and imm input?
-  // * when first time branch instruction(inst1) come to control hazard unit(ID phase), unit get right pc and
-  // * generate right imm for prefiction. but control hazard unit need must judge whether predict
-  // * error(MEM phase, because EXE phase get branch substract calculate result). but in inst1's MEM, 
-  // * the control unit's pc and other input are not inst1. so need add that fields.
   input branch,                     //is b-type instruction(after exe phase, from ex/mem register)
   input [`FB_32BITS-1:0] bra_pc,                  //pc(come from EX/MEM register, use for branch predict error)
   input [`FB_32BITS-1:0] bra_imm,       //offset(come from EX/MEM register, use for branch predict error)
@@ -79,9 +93,11 @@ assign j_type = (inst[6:0] == 7'b1101111);
 assign jalr_type = (inst[6:0] == 7'b1100111);
 assign b_type = (inst[6:0] == 7'b1100011);
 
+
+//change pc source when: 1. jal 2. jalr calculate address finish 3. branch predict 4. branch predict error 
 assign pc_src = j_type | jalr_en | b_type | is_predict_error;
 // assign pc_src = j_type | jalr_type | b_type;
-// ! unlock in next clock because IF lock generate 32'b0 instruction
+// ! 100% unlock in next clock because IF lock generate 32'b0 instruction
 assign lock = jalr_type & (~jalr_en);
 
 assign beq_ins = (inst[14:12] == 3'b000);
