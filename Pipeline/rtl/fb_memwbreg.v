@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 11:04:22
-//  LastEditTime: 2022-03-14 12:01:01
+//  LastEditTime: 2022-03-20 21:49:58
 //  LastEditors: YiBo Zhang
 //  Description: this is MEM/RB register
 //  1. this register don't have reset signal
@@ -30,7 +30,7 @@ module fb_memwbreg (
   output reg wb_reg_write,
   output reg [`FB_32BITS-1:0] wb_memory_data,     
   output reg [`FB_32BITS-1:0] wb_alu_res,
-  output reg [4:0] wb_register_rd        
+  output reg [4:0] wb_register_rd     
 );
 
 always @(posedge clk ) begin

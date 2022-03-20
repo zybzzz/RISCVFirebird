@@ -60,12 +60,12 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>we</string>
-        </entry>
-        <entry>
           <string>Description</string>
           <string>写使能</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>we</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="260"/>
@@ -182,14 +182,14 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>w1</string>
-        </entry>
-        <entry>
           <string>Description</string>
           <string>wb_mem_to_reg:
 0 -&gt; 寄存器写数据输入来自alu
 1 -&gt; 寄存器写数据输入来自mem</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>w1</string>
         </entry>
       </elementAttributes>
       <pos x="660" y="240"/>

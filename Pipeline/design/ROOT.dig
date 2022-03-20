@@ -144,6 +144,10 @@
           <boolean>true</boolean>
         </entry>
         <entry>
+          <string>runRealTime</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
           <string>Label</string>
           <string>clk</string>
         </entry>
@@ -2658,7 +2662,7 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>data_src:2,out_add:10</string>
+          <string>data_src:2,out_add:10,clr_stat</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -3092,12 +3096,22 @@
       <elementName>Tunnel</elementName>
       <elementAttributes>
         <entry>
+          <string>NetName</string>
+          <string>clrstat</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-1120" y="420"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
           <string>rotation</string>
           <rotation rotation="2"/>
         </entry>
         <entry>
           <string>NetName</string>
-          <string>e00</string>
+          <string>clrstat</string>
         </entry>
       </elementAttributes>
       <pos x="-820" y="280"/>
@@ -3447,6 +3461,10 @@
     <wire>
       <p1 x="-540" y="420"/>
       <p2 x="-460" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="-1200" y="420"/>
+      <p2 x="-1120" y="420"/>
     </wire>
     <wire>
       <p1 x="-260" y="-40"/>

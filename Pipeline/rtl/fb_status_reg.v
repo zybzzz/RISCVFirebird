@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-19 16:14:53
-//  LastEditTime: 2022-03-20 20:35:40
+//  LastEditTime: 2022-03-20 21:55:11
 //  LastEditors: YiBo Zhang
 //  Description: this is status register of keyboard 
 //  
@@ -22,11 +22,11 @@ always @(posedge clk ) begin
   if(av == 1'b1) begin
     status <= {{31{1'b0}}, av};
   end
-end
-
-always @(negedge clk ) begin
-  if (clr == 1'b1) begin
-    status <= 32'b0;
+  else begin
+    if (clr == 1'b1) begin
+      status <= 32'b0;
+    end
   end
 end
+
 endmodule
