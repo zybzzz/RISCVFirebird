@@ -144,10 +144,6 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>runRealTime</string>
-          <boolean>true</boolean>
-        </entry>
-        <entry>
           <string>Label</string>
           <string>clk</string>
         </entry>
@@ -2843,12 +2839,12 @@
       <elementName>ExternalFile</elementName>
       <elementAttributes>
         <entry>
-          <string>Label</string>
-          <string>t_f_decode</string>
-        </entry>
-        <entry>
           <string>applicationType</string>
           <appType>IVERILOG</appType>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>t_f_decode</string>
         </entry>
         <entry>
           <string>externalInputs</string>
@@ -3016,12 +3012,12 @@
           <boolean>true</boolean>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>keyclk</string>
-        </entry>
-        <entry>
           <string>runRealTime</string>
           <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>keyclk</string>
         </entry>
       </elementAttributes>
       <pos x="-1360" y="-500"/>

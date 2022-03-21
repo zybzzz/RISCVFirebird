@@ -1,0 +1,37 @@
+Address     Code        Basic                        Line Source
+
+0x00000000  0x00100413  addi x8,x0,1                 1    addi s0, zero, 1			# s0 forever 1 use for bne
+0x00000004  0x03000493  addi x9,x0,0x00000030        2    addi s1, zero, 48			# ascii 48 - num 0
+0x00000008  0x03a00913  addi x18,x0,0x0000003a       3    addi s2, zero, 58			# ascii 57 - num 9 this is 58
+0x0000000c  0x04200993  addi x19,x0,0x00000042       4    addi s3, zero, 66			# ascii 66 - B
+0x00000010  0x00000593  addi x11,x0,0                5    begin: addi a1, zero, 0
+0x00000014  0x40002283  lw x5,0x00000400(x0)         6    lw t0, 1024(zero)
+0x00000018  0xfe829ce3  bne x5,x8,0xfffffff8         7    bne t0, s0, begin
+0x0000001c  0x40102283  lw x5,0x00000401(x0)         9    lw t0, 1025(zero)
+0x00000020  0x0292c463  blt x5,x9,0x00000028         10   blt t0, s1, alpha
+0x00000024  0x0322d263  bge x5,x18,0x00000024        11   bge t0, s2, alpha
+0x00000028  0x40928533  sub x10,x5,x9                13   sub a0, t0, s1
+0x0000002c  0x00a05863  bge x0,x10,0x00000010        14   num: ble a0, zero, sum_exit		#go to sum_exit if n <= 0
+0x00000030  0x00a585b3  add x11,x11,x10              15   add a1, a1, a0			#add n to acc
+0x00000034  0xfff50513  addi x10,x10,0xffffffff      16   addi a0, a0, -1			#subtract 1 from n
+0x00000038  0xff5ff06f  jal x0,0xfffffff4            17   jal zero, num					#jump to sum, num is sum function
+0x0000003c  0x009585b3  add x11,x11,x9               18   sum_exit: add a1, a1, s1
+0x00000040  0x40b02123  sw x11,0x00000402(x0)        19   sw a1,1026(zero)			
+0x00000044  0xfcdff0ef  jal x1,0xffffffcc            20   jal begin				#return to caller,may fix
+0x00000048  0x00d00593  addi x11,x0,13               21   alpha: addi a1, zero, 13
+0x0000004c  0x40b02123  sw x11,0x00000402(x0)        22   sw a1,1026(zero)
+0x00000050  0x05200593  addi x11,x0,0x00000052       23   addi a1, zero, 82				# R
+0x00000054  0x40b02123  sw x11,0x00000402(x0)        24   sw a1,1026(zero)
+0x00000058  0x04900593  addi x11,x0,0x00000049       25   addi a1, zero, 73				# I
+0x0000005c  0x40b02123  sw x11,0x00000402(x0)        26   sw a1,1026(zero)
+0x00000060  0x05300593  addi x11,x0,0x00000053       27   addi a1, zero, 83				# S
+0x00000064  0x40b02123  sw x11,0x00000402(x0)        28   sw a1,1026(zero)
+0x00000068  0x04300593  addi x11,x0,0x00000043       29   addi a1, zero, 67				# C
+0x0000006c  0x40b02123  sw x11,0x00000402(x0)        30   sw a1,1026(zero)
+0x00000070  0x02d00593  addi x11,x0,0x0000002d       31   addi a1, zero, 45				# - 
+0x00000074  0x40b02123  sw x11,0x00000402(x0)        32   sw a1,1026(zero)		
+0x00000078  0x05600593  addi x11,x0,0x00000056       33   addi a1, zero, 86				# V
+0x0000007c  0x40b02123  sw x11,0x00000402(x0)        34   sw a1,1026(zero)
+0x00000080  0x00d00593  addi x11,x0,13               35   addi a1, zero, 13				#huiche
+0x00000084  0x40b02123  sw x11,0x00000402(x0)        36   sw a1,1026(zero)
+0x00000088  0xf89ff0ef  jal x1,0xffffff88            37   jal begin

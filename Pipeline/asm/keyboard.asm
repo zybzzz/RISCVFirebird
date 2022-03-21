@@ -15,8 +15,23 @@ num: ble a0, zero, sum_exit		#go to sum_exit if n <= 0
 add a1, a1, a0			#add n to acc
 addi a0, a0, -1			#subtract 1 from n
 jal zero, num					#jump to sum, num is sum function
-sum_exit: sw a1,1026(zero)			#return value acc
+sum_exit: add a1, a1, s1
+sw a1,1026(zero)			
 jal begin				#return to caller,may fix
-alpha: add a1, a1, s3
+alpha: addi a1, zero, 13
+sw a1,1026(zero)
+addi a1, zero, 82				# R
+sw a1,1026(zero)
+addi a1, zero, 73				# I
+sw a1,1026(zero)
+addi a1, zero, 83				# S
+sw a1,1026(zero)
+addi a1, zero, 67				# C
+sw a1,1026(zero)
+addi a1, zero, 45				# - 
+sw a1,1026(zero)		
+addi a1, zero, 86				# V
+sw a1,1026(zero)
+addi a1, zero, 13				#huiche
 sw a1,1026(zero)
 jal begin
