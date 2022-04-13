@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,we,mem_mem_to_reg,mem_reg_write,mem_memory_data:32,mem_alu_res:32,mem_register_rd:5</string>
+          <string>clk,we,mem_mem_to_reg,mem_reg_write,mem_memory_data:32,mem_alu_res:32,mem_register_rd:5,mem_inst:32</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -24,7 +24,7 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>wb_mem_to_reg,wb_reg_write,wb_memory_data:32,wb_alu_res:32,wb_register_rd:5</string>
+          <string>wb_mem_to_reg,wb_reg_write,wb_memory_data:32,wb_alu_res:32,wb_register_rd:5,wb_inst:32</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
@@ -278,6 +278,50 @@
       </elementAttributes>
       <pos x="660" y="320"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>m6</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="380"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>w6</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="340"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -309,6 +353,10 @@
       <p2 x="240" y="340"/>
     </wire>
     <wire>
+      <p1 x="560" y="340"/>
+      <p2 x="660" y="340"/>
+    </wire>
+    <wire>
       <p1 x="140" y="360"/>
       <p2 x="240" y="360"/>
     </wire>
@@ -327,6 +375,10 @@
     <wire>
       <p1 x="560" y="300"/>
       <p2 x="660" y="300"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="380"/>
+      <p2 x="240" y="380"/>
     </wire>
   </wires>
   <measurementOrdering/>

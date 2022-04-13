@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,we,rst,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_alu_res:32,ex_rs2_data:32,ex_register_rd:5,ex_pc:32,ex_imm:32,ex_bra_control:6</string>
+          <string>clk,we,rst,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_alu_res:32,ex_rs2_data:32,ex_register_rd:5,ex_pc:32,ex_imm:32,ex_bra_control:6,ex_inst:32</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -24,7 +24,7 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>mem_mem_read,mem_mem_write,mem_branch,mem_mem_to_reg,mem_reg_write,mem_alu_res:32,mem_rs2_data:32,mem_register_rd:5,mem_pc:32,mem_imm:32,mem_bra_control:6</string>
+          <string>mem_mem_read,mem_mem_write,mem_branch,mem_mem_to_reg,mem_reg_write,mem_alu_res:32,mem_rs2_data:32,mem_register_rd:5,mem_pc:32,mem_imm:32,mem_bra_control:6,mem_inst:32</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
@@ -412,16 +412,16 @@
           <boolean>true</boolean>
         </entry>
         <entry>
+          <string>Description</string>
+          <string>ex阶段传来的imm,用于branch</string>
+        </entry>
+        <entry>
           <string>Label</string>
           <string>e10</string>
         </entry>
         <entry>
           <string>Bits</string>
           <int>32</int>
-        </entry>
-        <entry>
-          <string>Description</string>
-          <string>ex阶段传来的imm,用于branch</string>
         </entry>
       </elementAttributes>
       <pos x="140" y="440"/>
@@ -478,16 +478,16 @@
           <boolean>true</boolean>
         </entry>
         <entry>
+          <string>Description</string>
+          <string>ex阶段传来的pc，用于branch</string>
+        </entry>
+        <entry>
           <string>Label</string>
           <string>m9</string>
         </entry>
         <entry>
           <string>Bits</string>
           <int>32</int>
-        </entry>
-        <entry>
-          <string>Description</string>
-          <string>ex阶段传来的pc，用于branch</string>
         </entry>
       </elementAttributes>
       <pos x="660" y="360"/>
@@ -536,6 +536,50 @@
       </elementAttributes>
       <pos x="660" y="400"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e12</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="140" y="480"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>m12</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="660" y="420"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -545,6 +589,10 @@
     <wire>
       <p1 x="560" y="320"/>
       <p2 x="660" y="320"/>
+    </wire>
+    <wire>
+      <p1 x="140" y="480"/>
+      <p2 x="240" y="480"/>
     </wire>
     <wire>
       <p1 x="140" y="260"/>
@@ -557,6 +605,10 @@
     <wire>
       <p1 x="140" y="420"/>
       <p2 x="240" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="420"/>
+      <p2 x="660" y="420"/>
     </wire>
     <wire>
       <p1 x="140" y="200"/>

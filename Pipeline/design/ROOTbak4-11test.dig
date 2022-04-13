@@ -3078,12 +3078,12 @@
           <int>20</int>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>IF（取指）</string>
-        </entry>
-        <entry>
           <string>RectHeight</string>
           <int>16</int>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>IF（取指）</string>
         </entry>
         <entry>
           <string>RectWidth</string>
@@ -3246,16 +3246,16 @@
           <int>17</int>
         </entry>
         <entry>
-          <string>Label</string>
-          <string>输入信号</string>
-        </entry>
-        <entry>
           <string>RectHeight</string>
           <int>4</int>
         </entry>
         <entry>
+          <string>Label</string>
+          <string>输入信号</string>
+        </entry>
+        <entry>
           <string>RectWidth</string>
-          <int>36</int>
+          <int>38</int>
         </entry>
       </elementAttributes>
       <pos x="380" y="-1240"/>
@@ -3395,10 +3395,10 @@
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>36</int>
+          <int>38</int>
         </entry>
       </elementAttributes>
-      <pos x="380" y="-1120"/>
+      <pos x="380" y="-1140"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -3482,7 +3482,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>36</int>
+          <int>38</int>
         </entry>
       </elementAttributes>
       <pos x="380" y="-880"/>
@@ -4336,7 +4336,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>40</int>
+          <int>43</int>
         </entry>
       </elementAttributes>
       <pos x="360" y="-360"/>
@@ -4358,7 +4358,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>RectWidth</string>
-          <int>36</int>
+          <int>41</int>
         </entry>
       </elementAttributes>
       <pos x="380" y="-340"/>
@@ -4513,7 +4513,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>NetName</string>
-          <string>inst</string>
+          <string>exinst</string>
         </entry>
       </elementAttributes>
       <pos x="900" y="-320"/>
@@ -4800,7 +4800,7 @@ J类型指令使用</string>
           <string>op2</string>
         </entry>
       </elementAttributes>
-      <pos x="960" y="-160"/>
+      <pos x="1000" y="-160"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -4810,7 +4810,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="1020" y="-160"/>
+      <pos x="1060" y="-160"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -4824,7 +4824,7 @@ J类型指令使用</string>
           <string>操作数2</string>
         </entry>
       </elementAttributes>
-      <pos x="960" y="-140"/>
+      <pos x="1000" y="-140"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5146,7 +5146,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>RectHeight</string>
-          <int>39</int>
+          <int>42</int>
         </entry>
         <entry>
           <string>Label</string>
@@ -5179,7 +5179,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-1160" y="320"/>
+      <pos x="-1160" y="380"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5198,7 +5198,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-1080" y="340"/>
+      <pos x="-1080" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5212,7 +5212,7 @@ J类型指令使用</string>
           <string>clk</string>
         </entry>
       </elementAttributes>
-      <pos x="-1100" y="340"/>
+      <pos x="-1100" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5231,7 +5231,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-960" y="340"/>
+      <pos x="-960" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5245,7 +5245,7 @@ J类型指令使用</string>
           <string>rst</string>
         </entry>
       </elementAttributes>
-      <pos x="-980" y="340"/>
+      <pos x="-980" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5259,7 +5259,7 @@ J类型指令使用</string>
           <string>时钟</string>
         </entry>
       </elementAttributes>
-      <pos x="-1120" y="360"/>
+      <pos x="-1120" y="420"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5273,7 +5273,7 @@ J类型指令使用</string>
           <string>清空ID/EX寄存器</string>
         </entry>
       </elementAttributes>
-      <pos x="-1040" y="360"/>
+      <pos x="-1040" y="420"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5292,7 +5292,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="340"/>
+      <pos x="-760" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5306,7 +5306,7 @@ J类型指令使用</string>
           <string>emmr</string>
         </entry>
       </elementAttributes>
-      <pos x="-780" y="340"/>
+      <pos x="-780" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5320,7 +5320,7 @@ J类型指令使用</string>
           <string>存储器读</string>
         </entry>
       </elementAttributes>
-      <pos x="-820" y="360"/>
+      <pos x="-820" y="420"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5339,7 +5339,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-600" y="340"/>
+      <pos x="-600" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5353,7 +5353,7 @@ J类型指令使用</string>
           <string>emmw</string>
         </entry>
       </elementAttributes>
-      <pos x="-620" y="340"/>
+      <pos x="-620" y="400"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5367,7 +5367,7 @@ J类型指令使用</string>
           <string>存储器写</string>
         </entry>
       </elementAttributes>
-      <pos x="-660" y="360"/>
+      <pos x="-660" y="420"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5381,7 +5381,7 @@ J类型指令使用</string>
           <string>emalur</string>
         </entry>
       </elementAttributes>
-      <pos x="-1040" y="400"/>
+      <pos x="-1040" y="460"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -5391,7 +5391,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-980" y="400"/>
+      <pos x="-980" y="460"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5405,7 +5405,7 @@ J类型指令使用</string>
           <string>EX的运算结果</string>
         </entry>
       </elementAttributes>
-      <pos x="-1100" y="420"/>
+      <pos x="-1100" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5419,7 +5419,7 @@ J类型指令使用</string>
           <string>emrs2d</string>
         </entry>
       </elementAttributes>
-      <pos x="-740" y="400"/>
+      <pos x="-740" y="460"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -5429,7 +5429,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-680" y="400"/>
+      <pos x="-680" y="460"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5443,7 +5443,7 @@ J类型指令使用</string>
           <string>寄存器2数值</string>
         </entry>
       </elementAttributes>
-      <pos x="-780" y="420"/>
+      <pos x="-780" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -5465,7 +5465,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-1160" y="480"/>
+      <pos x="-1160" y="540"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5493,7 +5493,7 @@ J类型指令使用</string>
           <string>mmudatasrc</string>
         </entry>
       </elementAttributes>
-      <pos x="-1020" y="500"/>
+      <pos x="-1020" y="560"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -5503,7 +5503,7 @@ J类型指令使用</string>
           <intFormat>bin</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-960" y="500"/>
+      <pos x="-960" y="560"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5517,7 +5517,7 @@ J类型指令使用</string>
           <string>MMU产生的数据源</string>
         </entry>
       </elementAttributes>
-      <pos x="-1120" y="520"/>
+      <pos x="-1120" y="580"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5531,7 +5531,7 @@ J类型指令使用</string>
           <string>mmuadd</string>
         </entry>
       </elementAttributes>
-      <pos x="-800" y="500"/>
+      <pos x="-800" y="560"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -5541,7 +5541,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-740" y="500"/>
+      <pos x="-740" y="560"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5555,7 +5555,7 @@ J类型指令使用</string>
           <string>MMU产生的数据地址</string>
         </entry>
       </elementAttributes>
-      <pos x="-900" y="520"/>
+      <pos x="-900" y="580"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5574,7 +5574,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-500" y="500"/>
+      <pos x="-500" y="560"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5588,7 +5588,7 @@ J类型指令使用</string>
           <string>clrstat</string>
         </entry>
       </elementAttributes>
-      <pos x="-520" y="500"/>
+      <pos x="-520" y="560"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5602,7 +5602,7 @@ J类型指令使用</string>
           <string>状态寄存器读后清除信号</string>
         </entry>
       </elementAttributes>
-      <pos x="-640" y="520"/>
+      <pos x="-640" y="580"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -5624,7 +5624,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-1160" y="580"/>
+      <pos x="-1160" y="640"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -5646,7 +5646,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-1160" y="680"/>
+      <pos x="-1160" y="740"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -5668,7 +5668,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-1160" y="780"/>
+      <pos x="-1160" y="840"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -5690,7 +5690,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-1160" y="880"/>
+      <pos x="-1160" y="940"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -5712,7 +5712,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-1160" y="980"/>
+      <pos x="-1160" y="1040"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5740,12 +5740,12 @@ J类型指令使用</string>
           <string>memdata</string>
         </entry>
       </elementAttributes>
-      <pos x="-1020" y="1000"/>
+      <pos x="-1020" y="1060"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
       <elementAttributes/>
-      <pos x="-960" y="1000"/>
+      <pos x="-960" y="1060"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5759,7 +5759,7 @@ J类型指令使用</string>
           <string>MEM阶段得到的结果</string>
         </entry>
       </elementAttributes>
-      <pos x="-1120" y="1020"/>
+      <pos x="-1120" y="1080"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5802,7 +5802,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-1080" y="600"/>
+      <pos x="-1080" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5816,7 +5816,7 @@ J类型指令使用</string>
           <string>clk</string>
         </entry>
       </elementAttributes>
-      <pos x="-1100" y="600"/>
+      <pos x="-1100" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5830,7 +5830,7 @@ J类型指令使用</string>
           <string>时钟</string>
         </entry>
       </elementAttributes>
-      <pos x="-1120" y="620"/>
+      <pos x="-1120" y="680"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5849,7 +5849,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-960" y="600"/>
+      <pos x="-960" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5863,7 +5863,7 @@ J类型指令使用</string>
           <string>clrstat</string>
         </entry>
       </elementAttributes>
-      <pos x="-980" y="600"/>
+      <pos x="-980" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5877,7 +5877,7 @@ J类型指令使用</string>
           <string>读后擦除</string>
         </entry>
       </elementAttributes>
-      <pos x="-1020" y="620"/>
+      <pos x="-1020" y="680"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5896,7 +5896,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-860" y="600"/>
+      <pos x="-860" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5910,7 +5910,7 @@ J类型指令使用</string>
           <string>av</string>
         </entry>
       </elementAttributes>
-      <pos x="-880" y="600"/>
+      <pos x="-880" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5924,7 +5924,7 @@ J类型指令使用</string>
           <string>使能</string>
         </entry>
       </elementAttributes>
-      <pos x="-900" y="620"/>
+      <pos x="-900" y="680"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5938,7 +5938,7 @@ J类型指令使用</string>
           <string>d00data</string>
         </entry>
       </elementAttributes>
-      <pos x="-720" y="600"/>
+      <pos x="-720" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -5948,7 +5948,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-660" y="600"/>
+      <pos x="-660" y="660"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -5962,7 +5962,7 @@ J类型指令使用</string>
           <string>状态值</string>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="620"/>
+      <pos x="-760" y="680"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -5981,7 +5981,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-1080" y="700"/>
+      <pos x="-1080" y="760"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -5995,7 +5995,7 @@ J类型指令使用</string>
           <string>clk</string>
         </entry>
       </elementAttributes>
-      <pos x="-1100" y="700"/>
+      <pos x="-1100" y="760"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6009,7 +6009,7 @@ J类型指令使用</string>
           <string>时钟</string>
         </entry>
       </elementAttributes>
-      <pos x="-1120" y="720"/>
+      <pos x="-1120" y="780"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -6028,7 +6028,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-980" y="700"/>
+      <pos x="-980" y="760"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6042,7 +6042,7 @@ J类型指令使用</string>
           <string>av</string>
         </entry>
       </elementAttributes>
-      <pos x="-1000" y="700"/>
+      <pos x="-1000" y="760"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6056,7 +6056,7 @@ J类型指令使用</string>
           <string>使能</string>
         </entry>
       </elementAttributes>
-      <pos x="-1020" y="720"/>
+      <pos x="-1020" y="780"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6070,7 +6070,7 @@ J类型指令使用</string>
           <string>d01data</string>
         </entry>
       </elementAttributes>
-      <pos x="-820" y="700"/>
+      <pos x="-820" y="760"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -6080,7 +6080,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-760" y="700"/>
+      <pos x="-760" y="760"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6094,7 +6094,7 @@ J类型指令使用</string>
           <string>寄存器数据</string>
         </entry>
       </elementAttributes>
-      <pos x="-860" y="720"/>
+      <pos x="-860" y="780"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6123,7 +6123,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-1080" y="800"/>
+      <pos x="-1080" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6137,7 +6137,7 @@ J类型指令使用</string>
           <string>clk</string>
         </entry>
       </elementAttributes>
-      <pos x="-1100" y="800"/>
+      <pos x="-1100" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6151,7 +6151,7 @@ J类型指令使用</string>
           <string>时钟</string>
         </entry>
       </elementAttributes>
-      <pos x="-1120" y="820"/>
+      <pos x="-1120" y="880"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -6170,7 +6170,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-980" y="800"/>
+      <pos x="-980" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6184,7 +6184,7 @@ J类型指令使用</string>
           <string>gcc</string>
         </entry>
       </elementAttributes>
-      <pos x="-1000" y="800"/>
+      <pos x="-1000" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6198,7 +6198,7 @@ J类型指令使用</string>
           <string>使能</string>
         </entry>
       </elementAttributes>
-      <pos x="-1020" y="820"/>
+      <pos x="-1020" y="880"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6226,7 +6226,7 @@ J类型指令使用</string>
           <string>kbdata</string>
         </entry>
       </elementAttributes>
-      <pos x="-840" y="800"/>
+      <pos x="-840" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -6236,7 +6236,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-780" y="800"/>
+      <pos x="-780" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6250,7 +6250,7 @@ J类型指令使用</string>
           <string>键盘输入数据</string>
         </entry>
       </elementAttributes>
-      <pos x="-900" y="820"/>
+      <pos x="-900" y="880"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -6269,7 +6269,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-540" y="800"/>
+      <pos x="-540" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6283,7 +6283,7 @@ J类型指令使用</string>
           <string>av</string>
         </entry>
       </elementAttributes>
-      <pos x="-560" y="800"/>
+      <pos x="-560" y="860"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6297,7 +6297,7 @@ J类型指令使用</string>
           <string>当前有数据输入</string>
         </entry>
       </elementAttributes>
-      <pos x="-620" y="820"/>
+      <pos x="-620" y="880"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6326,7 +6326,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-1080" y="900"/>
+      <pos x="-1080" y="960"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6340,7 +6340,7 @@ J类型指令使用</string>
           <string>clk</string>
         </entry>
       </elementAttributes>
-      <pos x="-1100" y="900"/>
+      <pos x="-1100" y="960"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6354,7 +6354,7 @@ J类型指令使用</string>
           <string>时钟</string>
         </entry>
       </elementAttributes>
-      <pos x="-1120" y="920"/>
+      <pos x="-1120" y="980"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -6373,7 +6373,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-940" y="900"/>
+      <pos x="-940" y="960"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6387,7 +6387,7 @@ J类型指令使用</string>
           <string>termen</string>
         </entry>
       </elementAttributes>
-      <pos x="-960" y="900"/>
+      <pos x="-960" y="960"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6401,7 +6401,7 @@ J类型指令使用</string>
           <string>使能</string>
         </entry>
       </elementAttributes>
-      <pos x="-980" y="920"/>
+      <pos x="-980" y="980"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6415,7 +6415,7 @@ J类型指令使用</string>
           <string>termdata</string>
         </entry>
       </elementAttributes>
-      <pos x="-800" y="900"/>
+      <pos x="-800" y="960"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -6425,7 +6425,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-740" y="900"/>
+      <pos x="-740" y="960"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6439,7 +6439,7 @@ J类型指令使用</string>
           <string>终端输入数据</string>
         </entry>
       </elementAttributes>
-      <pos x="-860" y="920"/>
+      <pos x="-860" y="980"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6460,7 +6460,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>RectHeight</string>
-          <int>12</int>
+          <int>16</int>
         </entry>
         <entry>
           <string>Label</string>
@@ -6493,7 +6493,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-140" y="380"/>
+      <pos x="-140" y="460"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -6512,7 +6512,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="-60" y="400"/>
+      <pos x="-60" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6526,7 +6526,7 @@ J类型指令使用</string>
           <string>clk</string>
         </entry>
       </elementAttributes>
-      <pos x="-80" y="400"/>
+      <pos x="-80" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -6545,7 +6545,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="160" y="400"/>
+      <pos x="160" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6559,7 +6559,7 @@ J类型指令使用</string>
           <string>mwmtr</string>
         </entry>
       </elementAttributes>
-      <pos x="140" y="400"/>
+      <pos x="140" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>LED</elementName>
@@ -6578,7 +6578,7 @@ J类型指令使用</string>
           </awt-color>
         </entry>
       </elementAttributes>
-      <pos x="380" y="400"/>
+      <pos x="380" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6592,7 +6592,7 @@ J类型指令使用</string>
           <string>mwrw</string>
         </entry>
       </elementAttributes>
-      <pos x="360" y="400"/>
+      <pos x="360" y="480"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6606,7 +6606,7 @@ J类型指令使用</string>
           <string>时钟</string>
         </entry>
       </elementAttributes>
-      <pos x="-100" y="420"/>
+      <pos x="-100" y="500"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6620,7 +6620,7 @@ J类型指令使用</string>
           <string>写回寄存器数据来源</string>
         </entry>
       </elementAttributes>
-      <pos x="60" y="420"/>
+      <pos x="60" y="500"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6634,7 +6634,7 @@ J类型指令使用</string>
           <string>寄存器写使能</string>
         </entry>
       </elementAttributes>
-      <pos x="300" y="420"/>
+      <pos x="300" y="500"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -6656,7 +6656,7 @@ J类型指令使用</string>
           <int>36</int>
         </entry>
       </elementAttributes>
-      <pos x="-140" y="480"/>
+      <pos x="-140" y="560"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6670,7 +6670,7 @@ J类型指令使用</string>
           <string>rs1</string>
         </entry>
       </elementAttributes>
-      <pos x="-80" y="520"/>
+      <pos x="-80" y="600"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -6680,7 +6680,7 @@ J类型指令使用</string>
           <intFormat>dec</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="-60" y="520"/>
+      <pos x="-60" y="600"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6694,7 +6694,7 @@ J类型指令使用</string>
           <string>写回寄存器号</string>
         </entry>
       </elementAttributes>
-      <pos x="-120" y="540"/>
+      <pos x="-120" y="620"/>
     </visualElement>
     <visualElement>
       <elementName>Tunnel</elementName>
@@ -6708,7 +6708,7 @@ J类型指令使用</string>
           <string>rbval</string>
         </entry>
       </elementAttributes>
-      <pos x="140" y="520"/>
+      <pos x="140" y="600"/>
     </visualElement>
     <visualElement>
       <elementName>Probe</elementName>
@@ -6718,7 +6718,7 @@ J类型指令使用</string>
           <intFormat>hex</intFormat>
         </entry>
       </elementAttributes>
-      <pos x="160" y="520"/>
+      <pos x="160" y="600"/>
     </visualElement>
     <visualElement>
       <elementName>Text</elementName>
@@ -6732,7 +6732,7 @@ J类型指令使用</string>
           <string>写回寄存器数值</string>
         </entry>
       </elementAttributes>
-      <pos x="80" y="540"/>
+      <pos x="80" y="620"/>
     </visualElement>
     <visualElement>
       <elementName>Rectangle</elementName>
@@ -8349,6 +8349,144 @@ J类型指令使用</string>
       </elementAttributes>
       <pos x="-720" y="-960"/>
     </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="3"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>inst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-720" y="0"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>exinst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-620" y="-220"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="3"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>exinst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="160" y="-140"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>meminst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="260" y="-240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>meminst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-720" y="240"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>NetName</string>
+          <string>wbinst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-560" y="200"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>meminst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-800" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Probe</elementName>
+      <elementAttributes/>
+      <pos x="-700" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Text</elementName>
+      <elementAttributes>
+        <entry>
+          <string>textFontSize</string>
+          <int>20</int>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>当前指令</string>
+        </entry>
+      </elementAttributes>
+      <pos x="-1040" y="340"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Tunnel</elementName>
+      <elementAttributes>
+        <entry>
+          <string>rotation</string>
+          <rotation rotation="2"/>
+        </entry>
+        <entry>
+          <string>NetName</string>
+          <string>wbinst</string>
+        </entry>
+      </elementAttributes>
+      <pos x="280" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Probe</elementName>
+      <elementAttributes/>
+      <pos x="380" y="400"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Text</elementName>
+      <elementAttributes>
+        <entry>
+          <string>textFontSize</string>
+          <int>20</int>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>当前指令</string>
+        </entry>
+      </elementAttributes>
+      <pos x="40" y="400"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -8432,18 +8570,6 @@ J类型指令使用</string>
       <p2 x="-1320" y="260"/>
     </wire>
     <wire>
-      <p1 x="-1100" y="900"/>
-      <p2 x="-1080" y="900"/>
-    </wire>
-    <wire>
-      <p1 x="-960" y="900"/>
-      <p2 x="-940" y="900"/>
-    </wire>
-    <wire>
-      <p1 x="-800" y="900"/>
-      <p2 x="-740" y="900"/>
-    </wire>
-    <wire>
       <p1 x="-1440" y="-520"/>
       <p2 x="-1400" y="-520"/>
     </wire>
@@ -8468,16 +8594,12 @@ J类型指令使用</string>
       <p2 x="-700" y="-520"/>
     </wire>
     <wire>
-      <p1 x="-80" y="520"/>
-      <p2 x="-60" y="520"/>
-    </wire>
-    <wire>
-      <p1 x="140" y="520"/>
-      <p2 x="160" y="520"/>
-    </wire>
-    <wire>
       <p1 x="-380" y="-140"/>
       <p2 x="140" y="-140"/>
+    </wire>
+    <wire>
+      <p1 x="-720" y="-140"/>
+      <p2 x="-700" y="-140"/>
     </wire>
     <wire>
       <p1 x="-340" y="-780"/>
@@ -8584,23 +8706,23 @@ J类型指令使用</string>
       <p2 x="-1900" y="400"/>
     </wire>
     <wire>
-      <p1 x="-1040" y="400"/>
-      <p2 x="-980" y="400"/>
+      <p1 x="-1100" y="400"/>
+      <p2 x="-1080" y="400"/>
     </wire>
     <wire>
-      <p1 x="-740" y="400"/>
-      <p2 x="-680" y="400"/>
+      <p1 x="-980" y="400"/>
+      <p2 x="-960" y="400"/>
     </wire>
     <wire>
-      <p1 x="-80" y="400"/>
-      <p2 x="-60" y="400"/>
+      <p1 x="-780" y="400"/>
+      <p2 x="-760" y="400"/>
     </wire>
     <wire>
-      <p1 x="140" y="400"/>
-      <p2 x="160" y="400"/>
+      <p1 x="-620" y="400"/>
+      <p2 x="-600" y="400"/>
     </wire>
     <wire>
-      <p1 x="360" y="400"/>
+      <p1 x="280" y="400"/>
       <p2 x="380" y="400"/>
     </wire>
     <wire>
@@ -8642,6 +8764,22 @@ J类型指令使用</string>
     <wire>
       <p1 x="-1200" y="20"/>
       <p2 x="-1160" y="20"/>
+    </wire>
+    <wire>
+      <p1 x="-1100" y="660"/>
+      <p2 x="-1080" y="660"/>
+    </wire>
+    <wire>
+      <p1 x="-980" y="660"/>
+      <p2 x="-960" y="660"/>
+    </wire>
+    <wire>
+      <p1 x="-880" y="660"/>
+      <p2 x="-860" y="660"/>
+    </wire>
+    <wire>
+      <p1 x="-720" y="660"/>
+      <p2 x="-660" y="660"/>
     </wire>
     <wire>
       <p1 x="-740" y="-280"/>
@@ -8720,8 +8858,8 @@ J类型指令使用</string>
       <p2 x="820" y="-160"/>
     </wire>
     <wire>
-      <p1 x="960" y="-160"/>
-      <p2 x="1020" y="-160"/>
+      <p1 x="1000" y="-160"/>
+      <p2 x="1060" y="-160"/>
     </wire>
     <wire>
       <p1 x="-340" y="-800"/>
@@ -8746,22 +8884,6 @@ J类型指令使用</string>
     <wire>
       <p1 x="-1780" y="160"/>
       <p2 x="-1700" y="160"/>
-    </wire>
-    <wire>
-      <p1 x="-1100" y="800"/>
-      <p2 x="-1080" y="800"/>
-    </wire>
-    <wire>
-      <p1 x="-1000" y="800"/>
-      <p2 x="-980" y="800"/>
-    </wire>
-    <wire>
-      <p1 x="-840" y="800"/>
-      <p2 x="-780" y="800"/>
-    </wire>
-    <wire>
-      <p1 x="-560" y="800"/>
-      <p2 x="-540" y="800"/>
     </wire>
     <wire>
       <p1 x="-1460" y="-420"/>
@@ -8814,6 +8936,10 @@ J类型指令使用</string>
     <wire>
       <p1 x="-1380" y="420"/>
       <p2 x="-1300" y="420"/>
+    </wire>
+    <wire>
+      <p1 x="-1020" y="1060"/>
+      <p2 x="-960" y="1060"/>
     </wire>
     <wire>
       <p1 x="-560" y="-40"/>
@@ -8912,6 +9038,18 @@ J类型指令使用</string>
       <p2 x="-620" y="-560"/>
     </wire>
     <wire>
+      <p1 x="-1020" y="560"/>
+      <p2 x="-960" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="-800" y="560"/>
+      <p2 x="-740" y="560"/>
+    </wire>
+    <wire>
+      <p1 x="-520" y="560"/>
+      <p2 x="-500" y="560"/>
+    </wire>
+    <wire>
       <p1 x="-1000" y="-180"/>
       <p2 x="-960" y="-180"/>
     </wire>
@@ -8930,6 +9068,10 @@ J类型指令使用</string>
     <wire>
       <p1 x="80" y="-180"/>
       <p2 x="140" y="-180"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="-180"/>
+      <p2 x="180" y="-180"/>
     </wire>
     <wire>
       <p1 x="-340" y="-820"/>
@@ -9072,18 +9214,6 @@ J类型指令使用</string>
       <p2 x="200" y="60"/>
     </wire>
     <wire>
-      <p1 x="-1100" y="700"/>
-      <p2 x="-1080" y="700"/>
-    </wire>
-    <wire>
-      <p1 x="-1000" y="700"/>
-      <p2 x="-980" y="700"/>
-    </wire>
-    <wire>
-      <p1 x="-820" y="700"/>
-      <p2 x="-760" y="700"/>
-    </wire>
-    <wire>
       <p1 x="-1120" y="-320"/>
       <p2 x="-1100" y="-320"/>
     </wire>
@@ -9138,6 +9268,18 @@ J类型指令使用</string>
     <wire>
       <p1 x="-800" y="-320"/>
       <p2 x="-700" y="-320"/>
+    </wire>
+    <wire>
+      <p1 x="-1100" y="960"/>
+      <p2 x="-1080" y="960"/>
+    </wire>
+    <wire>
+      <p1 x="-960" y="960"/>
+      <p2 x="-940" y="960"/>
+    </wire>
+    <wire>
+      <p1 x="-800" y="960"/>
+      <p2 x="-740" y="960"/>
     </wire>
     <wire>
       <p1 x="-1600" y="320"/>
@@ -9200,6 +9342,10 @@ J类型指令使用</string>
       <p2 x="-1040" y="200"/>
     </wire>
     <wire>
+      <p1 x="-620" y="200"/>
+      <p2 x="-560" y="200"/>
+    </wire>
+    <wire>
       <p1 x="440" y="-1100"/>
       <p2 x="500" y="-1100"/>
     </wire>
@@ -9258,6 +9404,14 @@ J类型指令使用</string>
     <wire>
       <p1 x="-860" y="-460"/>
       <p2 x="-820" y="-460"/>
+    </wire>
+    <wire>
+      <p1 x="-1040" y="460"/>
+      <p2 x="-980" y="460"/>
+    </wire>
+    <wire>
+      <p1 x="-740" y="460"/>
+      <p2 x="-680" y="460"/>
     </wire>
     <wire>
       <p1 x="-960" y="-720"/>
@@ -9352,20 +9506,8 @@ J类型指令使用</string>
       <p2 x="-620" y="-980"/>
     </wire>
     <wire>
-      <p1 x="-1100" y="340"/>
-      <p2 x="-1080" y="340"/>
-    </wire>
-    <wire>
-      <p1 x="-980" y="340"/>
-      <p2 x="-960" y="340"/>
-    </wire>
-    <wire>
-      <p1 x="-780" y="340"/>
-      <p2 x="-760" y="340"/>
-    </wire>
-    <wire>
-      <p1 x="-620" y="340"/>
-      <p2 x="-600" y="340"/>
+      <p1 x="-800" y="340"/>
+      <p2 x="-700" y="340"/>
     </wire>
     <wire>
       <p1 x="-920" y="-600"/>
@@ -9396,20 +9538,12 @@ J类型指令使用</string>
       <p2 x="-260" y="-1240"/>
     </wire>
     <wire>
-      <p1 x="-1100" y="600"/>
-      <p2 x="-1080" y="600"/>
+      <p1 x="-80" y="600"/>
+      <p2 x="-60" y="600"/>
     </wire>
     <wire>
-      <p1 x="-980" y="600"/>
-      <p2 x="-960" y="600"/>
-    </wire>
-    <wire>
-      <p1 x="-880" y="600"/>
-      <p2 x="-860" y="600"/>
-    </wire>
-    <wire>
-      <p1 x="-720" y="600"/>
-      <p2 x="-660" y="600"/>
+      <p1 x="140" y="600"/>
+      <p2 x="160" y="600"/>
     </wire>
     <wire>
       <p1 x="-1240" y="-860"/>
@@ -9446,6 +9580,26 @@ J类型指令使用</string>
     <wire>
       <p1 x="80" y="-220"/>
       <p2 x="180" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="-640" y="-220"/>
+      <p2 x="-620" y="-220"/>
+    </wire>
+    <wire>
+      <p1 x="-1100" y="860"/>
+      <p2 x="-1080" y="860"/>
+    </wire>
+    <wire>
+      <p1 x="-1000" y="860"/>
+      <p2 x="-980" y="860"/>
+    </wire>
+    <wire>
+      <p1 x="-840" y="860"/>
+      <p2 x="-780" y="860"/>
+    </wire>
+    <wire>
+      <p1 x="-560" y="860"/>
+      <p2 x="-540" y="860"/>
     </wire>
     <wire>
       <p1 x="-720" y="220"/>
@@ -9488,16 +9642,16 @@ J类型指令使用</string>
       <p2 x="40" y="-480"/>
     </wire>
     <wire>
-      <p1 x="-1220" y="-740"/>
-      <p2 x="-1160" y="-740"/>
+      <p1 x="-80" y="480"/>
+      <p2 x="-60" y="480"/>
     </wire>
     <wire>
-      <p1 x="-1680" y="-740"/>
-      <p2 x="-1620" y="-740"/>
+      <p1 x="140" y="480"/>
+      <p2 x="160" y="480"/>
     </wire>
     <wire>
-      <p1 x="-820" y="-740"/>
-      <p2 x="-540" y="-740"/>
+      <p1 x="360" y="480"/>
+      <p2 x="380" y="480"/>
     </wire>
     <wire>
       <p1 x="-840" y="-100"/>
@@ -9526,6 +9680,18 @@ J类型指令使用</string>
     <wire>
       <p1 x="-820" y="-100"/>
       <p2 x="-760" y="-100"/>
+    </wire>
+    <wire>
+      <p1 x="-1220" y="-740"/>
+      <p2 x="-1160" y="-740"/>
+    </wire>
+    <wire>
+      <p1 x="-1680" y="-740"/>
+      <p2 x="-1620" y="-740"/>
+    </wire>
+    <wire>
+      <p1 x="-820" y="-740"/>
+      <p2 x="-540" y="-740"/>
     </wire>
     <wire>
       <p1 x="-720" y="100"/>
@@ -9580,10 +9746,6 @@ J类型指令使用</string>
       <p2 x="-1300" y="360"/>
     </wire>
     <wire>
-      <p1 x="-1020" y="1000"/>
-      <p2 x="-960" y="1000"/>
-    </wire>
-    <wire>
       <p1 x="460" y="-620"/>
       <p2 x="480" y="-620"/>
     </wire>
@@ -9632,6 +9794,10 @@ J类型指令使用</string>
       <p2 x="180" y="-240"/>
     </wire>
     <wire>
+      <p1 x="240" y="-240"/>
+      <p2 x="260" y="-240"/>
+    </wire>
+    <wire>
       <p1 x="-600" y="-880"/>
       <p2 x="-540" y="-880"/>
     </wire>
@@ -9650,6 +9816,10 @@ J类型指令使用</string>
     <wire>
       <p1 x="-1400" y="240"/>
       <p2 x="-1320" y="240"/>
+    </wire>
+    <wire>
+      <p1 x="-720" y="240"/>
+      <p2 x="-680" y="240"/>
     </wire>
     <wire>
       <p1 x="-1420" y="-500"/>
@@ -9678,18 +9848,6 @@ J类型指令使用</string>
     <wire>
       <p1 x="-220" y="-500"/>
       <p2 x="-180" y="-500"/>
-    </wire>
-    <wire>
-      <p1 x="-1020" y="500"/>
-      <p2 x="-960" y="500"/>
-    </wire>
-    <wire>
-      <p1 x="-800" y="500"/>
-      <p2 x="-740" y="500"/>
-    </wire>
-    <wire>
-      <p1 x="-520" y="500"/>
-      <p2 x="-500" y="500"/>
     </wire>
     <wire>
       <p1 x="460" y="-760"/>
@@ -9726,6 +9884,18 @@ J类型指令使用</string>
     <wire>
       <p1 x="-1060" y="-120"/>
       <p2 x="-1020" y="-120"/>
+    </wire>
+    <wire>
+      <p1 x="-1100" y="760"/>
+      <p2 x="-1080" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="-1000" y="760"/>
+      <p2 x="-980" y="760"/>
+    </wire>
+    <wire>
+      <p1 x="-820" y="760"/>
+      <p2 x="-760" y="760"/>
     </wire>
     <wire>
       <p1 x="-720" y="120"/>
@@ -9912,6 +10082,10 @@ J类型指令使用</string>
       <p2 x="-400" y="200"/>
     </wire>
     <wire>
+      <p1 x="-720" y="-140"/>
+      <p2 x="-720" y="0"/>
+    </wire>
+    <wire>
       <p1 x="80" y="-380"/>
       <p2 x="80" y="-340"/>
     </wire>
@@ -10002,6 +10176,10 @@ J类型指令使用</string>
     <wire>
       <p1 x="-800" y="-320"/>
       <p2 x="-800" y="-280"/>
+    </wire>
+    <wire>
+      <p1 x="160" y="-180"/>
+      <p2 x="160" y="-140"/>
     </wire>
     <wire>
       <p1 x="-740" y="-160"/>

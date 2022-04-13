@@ -16,7 +16,7 @@
         </entry>
         <entry>
           <string>externalInputs</string>
-          <string>clk,we,rst,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock,id_pc:32,id_bra_control:6</string>
+          <string>clk,we,rst,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock,id_pc:32,id_bra_control:6,id_inst:32</string>
         </entry>
         <entry>
           <string>Width</string>
@@ -24,7 +24,7 @@
         </entry>
         <entry>
           <string>externalOutputs</string>
-          <string>ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_alu_control:19,ex_pc:32,ex_bra_control:6</string>
+          <string>ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_alu_control:19,ex_pc:32,ex_bra_control:6,ex_inst:32</string>
         </entry>
         <entry>
           <string>iverilogOptions</string>
@@ -792,6 +792,50 @@
       </elementAttributes>
       <pos x="600" y="440"/>
     </visualElement>
+    <visualElement>
+      <elementName>In</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>i18</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+      </elementAttributes>
+      <pos x="200" y="560"/>
+    </visualElement>
+    <visualElement>
+      <elementName>Out</elementName>
+      <elementAttributes>
+        <entry>
+          <string>small</string>
+          <boolean>true</boolean>
+        </entry>
+        <entry>
+          <string>Description</string>
+          <string>指令</string>
+        </entry>
+        <entry>
+          <string>Label</string>
+          <string>e18</string>
+        </entry>
+        <entry>
+          <string>Bits</string>
+          <int>32</int>
+        </entry>
+      </elementAttributes>
+      <pos x="600" y="480"/>
+    </visualElement>
   </visualElements>
   <wires>
     <wire>
@@ -813,6 +857,10 @@
     <wire>
       <p1 x="200" y="480"/>
       <p2 x="240" y="480"/>
+    </wire>
+    <wire>
+      <p1 x="560" y="480"/>
+      <p2 x="600" y="480"/>
     </wire>
     <wire>
       <p1 x="200" y="260"/>
@@ -889,6 +937,10 @@
     <wire>
       <p1 x="560" y="400"/>
       <p2 x="600" y="400"/>
+    </wire>
+    <wire>
+      <p1 x="200" y="560"/>
+      <p2 x="240" y="560"/>
     </wire>
     <wire>
       <p1 x="200" y="180"/>

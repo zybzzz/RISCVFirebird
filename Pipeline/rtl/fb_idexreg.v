@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 09:35:21
-//  LastEditTime: 2022-03-17 17:00:15
+//  LastEditTime: 2022-04-13 17:06:53
 //  LastEditors: YiBo Zhang
 //  Description: this is ID/EX register
 //  
@@ -40,10 +40,12 @@ module fb_idexreg (
   // * branch instruction
   input [`FB_32BITS-1:0] id_pc,
   input [5:0] id_bra_control,
+  // * instruction just for test
+  input [`FB_32BITS-1:0] id_inst,
   ///////////////////////////////////////
   //Digital ports:
-  //input: clk,we,rst,id_alu_op:2,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock
-  //output: ex_alu_op:2,ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_alu_control:19
+  //input: clk,we,rst,id_alu_op:2,id_alu_src,id_alu_res_src,id_mem_read,id_mem_write,id_branch,id_mem_to_reg,id_reg_write,id_pc_add_1:32,id_rs1_data:32,id_rs2_data:32,id_imm:32,id_register_rs1:5,id_register_rs2:5,id_register_rd:5,id_alu_control:19,lock,id_pc:32,id_bra_control:6,id_inst:32
+  //output: ex_alu_op:2,ex_alu_src,ex_alu_res_src,ex_mem_read,ex_mem_write,ex_branch,ex_mem_to_reg,ex_reg_write,ex_pc_add_1:32,ex_rs1_data:32,ex_rs2_data:32,ex_imm:32,ex_register_rs1:5,ex_register_rs2:5,ex_register_rd:5,ex_alu_control:19,ex_pc:32,ex_bra_control:6,ex_inst:32
   ///////////////////////////////////////
   //output control signal
   // output reg [1:0] ex_alu_op,
@@ -68,7 +70,9 @@ module fb_idexreg (
   output reg [18:0] ex_alu_control,
   //output for branch instruction
   output reg [`FB_32BITS-1:0] ex_pc,
-  output reg [5:0] ex_bra_control
+  output reg [5:0] ex_bra_control,
+  //output instruction just for test
+  output reg [`FB_32BITS-1:0] ex_inst
 );
 
 wire zero;
@@ -94,6 +98,7 @@ always @(posedge clk ) begin
     ex_alu_control <= 19'b0;
     ex_pc <= 32'b0;
     ex_bra_control <= 6'b0;
+    ex_inst <= 32'b0;
   end
   else begin
     if(we == 1) begin
@@ -126,6 +131,7 @@ always @(posedge clk ) begin
         ex_alu_control <= id_alu_control;
         ex_pc <= id_pc;
         ex_bra_control <= id_bra_control;
+        ex_inst <= id_inst;
       end
     end
   end
