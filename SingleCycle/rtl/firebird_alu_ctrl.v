@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-01-28 11:44:48
-//  LastEditTime: 2022-02-08 11:49:25
+//  LastEditTime: 2022-04-16 09:30:01
 //  LastEditors: YiBo Zhang
 //  Description: alu_control to control alu 
 //  the output [3:0] alu_ctrl_signal is the alu input
@@ -26,15 +26,16 @@ assign func_13 = inst[1];
 assign func_12 = inst[0];
 
 // the r-type instruction alu_ctrl_signal result
+// * binary name must mark the length
 wire [3:0]r_type_signal;
-assign r_type_signal = ({4{~func_30 && ~func_14 && ~func_13 && ~func_12}} & 0010)       // add
-                   | ({4{func_30 && ~func_14 && ~func_13 && ~func_12}} & 0110)       // subtract
-                   | ({4{~func_30 && func_14 && func_13 && func_12}} & 0000)       // AND
-                   | ({4{~func_30 && func_14 && func_13 && ~func_12}} & 0001);      // OR
+assign r_type_signal = ({4{~func_30 & ~func_14 & ~func_13 & ~func_12}} & 4'b0010)       // add
+                   | ({4{func_30 & ~func_14 & ~func_13 & ~func_12}} & 4'b0110)       // subtract
+                   | ({4{~func_30 & func_14 & func_13 & func_12}} & 4'b0000)       // AND
+                   | ({4{~func_30 & func_14 & func_13 & ~func_12}} & 4'b0001);      // OR
 
 // use aluop to generate alu_ctrl_signal
-assign alu_ctrl_signal = ({2{~alu_op[1] && ~alu_op[0]}} & 0010)
-                       | ({2{alu_op[0]}} & 0110)
-                       | ({2{alu_op[1]}} & r_type_signal);
+assign alu_ctrl_signal = ({4{~alu_op[1] & ~alu_op[0]}} & 4'b0010)
+                       | ({4{~alu_op[1] & alu_op[0]}} & 4'b0110)
+                       | ({4{alu_op[1] & ~alu_op[0]}} & r_type_signal);
 
 endmodule
