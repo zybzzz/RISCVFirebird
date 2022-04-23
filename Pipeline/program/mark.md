@@ -67,9 +67,9 @@ fff28293  #addi t0, t0, -1
 ff7ff06f  #jal zero, num
 00000c93  #num_exit: addi s9, zero, 0	#base pointer
 00000d13  #addi s10, zero, 0		#change pointer
-00098663  #b_loop: beq s3, zero, print
-0349e3b3  #rem t2, s3, s4
-0349c9b3  #div s3, s3, s4
+00090663  #b_loop: beq s2, zero, print
+034963b3  #rem t2, s2, s4
+03494933  #div s2, s2, s4
 007d2023  #sw t2, (s10)
 001d0d13  #addi s10, s10, 1
 ff7ff06f  #jal zero, b_loop

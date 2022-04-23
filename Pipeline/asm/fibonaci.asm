@@ -17,9 +17,9 @@ addi s3, t2, 0
 jal zero, num
 num_exit: addi s9, zero, 0	#base pointer
 addi s10, zero, 0		#change pointer
-b_loop: beq s3, zero, print
-rem t2, s3, s4
-div s3, s3, s4
+b_loop: beq s2, zero, print
+rem t2, s2, s4
+div s2, s2, s4
 sw t2, (s10)
 addi s10, s10, 1
 jal zero, b_loop
