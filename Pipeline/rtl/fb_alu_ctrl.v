@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-14 22:49:51
-//  LastEditTime: 2022-03-17 09:06:47
+//  LastEditTime: 2022-04-23 15:18:36
 //  LastEditors: YiBo Zhang
 //  Description: alu control generate control signal for alu
 //  
@@ -54,19 +54,19 @@ wire op_branch;       // * let alu know branch instruction and set csr
 // ! use || or |, maybe error
 assign op_add = (l_s_inst || 
                   (i_type && func3 == 3'b000) || 
-                  (r_type && func3 == 3'b000 &&func7[5] == 0));               //lw sw add addi
+                  (r_type && func3 == 3'b000 &&func7[5] == 0)) & ~op_mul;               //lw sw add addi
 
 assign op_sub = (b_type ||
-                  (r_type && func3 == 3'b000 &&func7[5] == 1));               //b-type sub
+                  (r_type && func3 == 3'b000 &&func7[5] == 1)) & ~op_mul;               //b-type sub
 
-assign op_sll = ((r_type || i_type) && func3 == 3'b001);                      //sll slli
-assign op_slt = ((r_type || i_type) && func3 == 3'b010);                      //slt slti
-assign op_sltu = ((r_type || i_type) && func3 == 3'b011);                     //sltu sltiu
-assign op_xor = ((r_type || i_type) && func3 == 3'b100);                      //xor xori                
-assign op_srl = ((r_type || i_type) && func3 == 3'b101 && func7[5] == 0);     //srl srli
-assign op_sra = ((r_type || i_type) && func3 == 3'b101 && func7[5] == 1);     //sra srai
-assign op_or = ((r_type || i_type) && func3 == 3'b110);                       //or ori
-assign op_and = ((r_type || i_type) && func3 == 3'b111);                      //and andi
+assign op_sll = ((r_type || i_type) && func3 == 3'b001) & ~op_mulh;                      //sll slli
+assign op_slt = ((r_type || i_type) && func3 == 3'b010) & ~op_mulhsu;                      //slt slti
+assign op_sltu = ((r_type || i_type) && func3 == 3'b011) & ~op_mulhu;                     //sltu sltiu
+assign op_xor = ((r_type || i_type) && func3 == 3'b100) & ~op_div;                      //xor xori                
+assign op_srl = ((r_type || i_type) && func3 == 3'b101 && func7[5] == 0) & ~op_divu;     //srl srli
+assign op_sra = ((r_type || i_type) && func3 == 3'b101 && func7[5] == 1) & ~op_divu;     //sra srai
+assign op_or = ((r_type || i_type) && func3 == 3'b110) & ~op_rem;                       //or ori
+assign op_and = ((r_type || i_type) && func3 == 3'b111) & ~op_remu;                      //and andi
 assign op_branch = b_type;                                                    //branch instruction
 
 //////////////////////////////////////

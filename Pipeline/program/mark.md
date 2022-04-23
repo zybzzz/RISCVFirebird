@@ -46,3 +46,42 @@ fe7ff06f  #jal zero, begin(-13)
 40b02123
 fc5ff06f  #jal zero, begin(-30)
 ```
+
+### febonaci
+``` shell
+00100413  #addi s0, zero, 1
+03000493  #addi s1, zero, 48
+00a00a13  #addi s4, zero, 10	# use for print
+00000913  #begin: addi s2, zero, 0
+00100993  #addi s3, zero, 1
+00000013  #stat: nop
+40002283  #lw t0, 1024(zero)
+fe829ee3  #bne t0, s0, stat
+40102283  #lw t0, 1025(zero)
+409282b3  #sub t0, t0, s1
+00028663  #num: beq t0, zero, num_exit
+fff28293  #addi t0, t0, -1
+013903b3  #add t2, s2, s3
+00098913  #addi s2, s3, 0
+00038993  #addi s3, t2, 0
+ff7ff06f  #jal zero, num
+00000c93  #num_exit: addi s9, zero, 0	#base pointer
+00000d13  #addi s10, zero, 0		#change pointer
+00098663  #b_loop: beq s3, zero, print
+0349e3b3  #rem t2, s3, s4
+0349c9b3  #div s3, s3, s4
+007d2023  #sw t2, (s10)
+001d0d13  #addi s10, s10, 1
+ff7ff06f  #jal zero, b_loop
+00d00393  #print: addi t2, zero, 13
+40702123  #sw t2, 1026(zero)
+019d0663  #p_loop: beq s10, s9, print_exit
+fffd0d13  #addi s10, s10, -1
+000d2383  #lw t2,(s10)
+009383b3  #add t2, t2, s1
+40702123  #sw t2, 1026(zero)
+ff7ff06f  #jal zero, p_loop
+00d00393  #print_exit: addi t2, zero, 13
+40702123  #sw t2, 1026(zero)
+fc3ff06f  #jal zero, begin
+```

@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 20:13:41
-//  LastEditTime: 2022-03-18 22:12:12
+//  LastEditTime: 2022-04-17 15:11:33
 //  LastEditors: YiBo Zhang
 //  Description: this is control hazard unit 
 /////////////////////////////////////
@@ -96,8 +96,6 @@ assign b_type = (inst[6:0] == 7'b1100011);
 
 //change pc source when: 1. jal 2. jalr calculate address finish 3. branch predict 4. branch predict error 
 assign pc_src = j_type | jalr_en | b_type | is_predict_error;
-// assign pc_src = j_type | jalr_type | b_type;
-// ! 100% unlock in next clock because IF lock generate 32'b0 instruction
 assign lock = jalr_type & (~jalr_en);
 
 assign beq_ins = (inst[14:12] == 3'b000);
@@ -113,11 +111,6 @@ assign o_bra_control = {beq_ins, bne_ins, blt_ins, bge_ins, bltu_ins, bgeu_ins};
 wire [`FB_32BITS-1:0] offset;
 assign offset = imm;
 
-// assign predict_pc = (j_type) ? pc + offset :                //jal
-//              (jalr_type) ? ((rs1_data + offset) & (~32'b1)) :     //jalr
-//              (offset[`FB_32BITS-1] == 1)? pc + offset :     //b-type jump back
-//              pc + 1;                                        //b-type jump front
-
 // default 0
 assign predict_pc = ({32{j_type}} & (pc + offset))
                   | ({32{b_type & offset[`FB_32BITS-1]}} & (pc + offset))
@@ -126,9 +119,6 @@ assign predict_pc = ({32{j_type}} & (pc + offset))
                   //  do not left shirt 1 bit, this cpu don't need
                   // | ({32{jalr_en}} & ((rs1_data + jalr_imm) & (~32'b1)));
 
-//j-type no error
-// assign predict_err_pc = (offset[`FB_32BITS-1] == 1)? pc + 1 :   //b-type jump back
-//                         pc + offset;                            //b-type jump front
 
 assign predict_err_pc = ({32{bra_imm[`FB_32BITS-1]}} & (bra_pc + 1))
                       | ({32{~bra_imm[`FB_32BITS-1]}} & (bra_pc + bra_imm));

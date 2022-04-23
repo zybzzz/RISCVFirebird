@@ -1,7 +1,7 @@
 //////////////////////////////////////
 //  Author: YiBo Zhang
 //  Date: 2022-03-13 19:18:52
-//  LastEditTime: 2022-03-17 08:38:59
+//  LastEditTime: 2022-04-18 11:23:32
 //  LastEditors: YiBo Zhang
 //  Description: this is cu, generatint different signal for EX/MEM/WB
 //  
@@ -45,15 +45,11 @@ wire j_type_ctrl;
 assign r_type_ctrl = (opcode[6:0] == 7'b0110011);
 assign b_type_ctrl = (opcode[6:0] == 7'b1100011);
 assign lw_inst = (opcode[6:0] == 7'b0000011);
-assign i_type_ctrl = (opcode[6:0] == 7'b0010011);     // * that i-type only includecalculate instruction
+assign i_type_ctrl = (opcode[6:0] == 7'b0010011);     // * that i-type only include calculate instruction
 assign s_type_ctrl = (opcode[6:0] == 7'b0100011);
 assign jalr_inst = (opcode[6:0] == 7'b1100111);
 assign j_type_ctrl = (opcode[6:0] == 7'b1101111);
 
-/////////////////////////////////////
-//IF
-// assign pc_src = b_type_ctrl | jalr_inst | j_type_ctrl;
-/////////////////////////////////////
 //control hazard unit
 assign jalr_en = jalr_inst;
 /////////////////////////////////////
@@ -64,7 +60,6 @@ assign alu_op = ({2{r_type_ctrl}} & 2'b10)
               | ({2{lw_inst | s_type_ctrl}} & 2'b00)
               | ({2{i_type_ctrl}} & 2'b11);
 assign alu_src = i_type_ctrl | s_type_ctrl | lw_inst;
-// ? jalr don't need alu, only need change alu result source TODO
 assign alu_res_src = jalr_inst | j_type_ctrl;
 /////////////////////////////////////
 //MEM

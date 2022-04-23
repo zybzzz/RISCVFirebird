@@ -19,8 +19,8 @@ module tb_alu;
   real TIME_INT = 5;
   initial begin
     alu_control = 19'b1;
-    op1 = 32'b101;
-    op2 = 32'b111;
+    op1 = 32'b101;  //5
+    op2 = 32'b111;  //7
     while (alu_control != 0) begin
       #TIME_INT;
       alu_control = alu_control << 1;
