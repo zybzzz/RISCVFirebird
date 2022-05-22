@@ -147,6 +147,10 @@
           <string>Label</string>
           <string>clk</string>
         </entry>
+        <entry>
+          <string>Frequency</string>
+          <int>100</int>
+        </entry>
       </elementAttributes>
       <pos x="-1460" y="-760"/>
     </visualElement>
@@ -4645,7 +4649,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>NetName</string>
-          <string>aluctrl</string>
+          <string>aluct</string>
         </entry>
       </elementAttributes>
       <pos x="820" y="-260"/>
@@ -7131,7 +7135,7 @@ J类型指令使用</string>
         </entry>
         <entry>
           <string>Label</string>
-          <string>数据冒险前递单元</string>
+          <string>数据冒险停顿单元</string>
         </entry>
         <entry>
           <string>RectWidth</string>

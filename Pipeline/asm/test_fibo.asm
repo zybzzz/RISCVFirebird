@@ -8,6 +8,7 @@ stat: nop
 lw t0, 1024(zero)
 bne t0, s0, stat	#check status
 lw t0, 1025(zero)
+addi t6, t0, 0
 sub t0, t0, s1
 num: beq t0, zero, num_exit	#loop f(n) = f(n - 1) + f(n - 2)
 addi t0, t0, -1
@@ -24,6 +25,27 @@ sw t2, (s10)
 addi s10, s10, 1
 jal zero, b_loop
 print: addi t2, zero, 13
+sw t2, 1026(zero)
+addi t2, zero, 102
+sw t2, 1026(zero)
+addi t2, zero, 105
+sw t2, 1026(zero)
+addi t2, zero, 98
+sw t2, 1026(zero)
+addi t2, zero, 111
+sw t2, 1026(zero)
+addi t2, zero, 110
+sw t2, 1026(zero)
+addi t2, zero, 97
+sw t2, 1026(zero)
+addi t2, zero, 99
+sw t2, 1026(zero)
+addi t2, zero, 40
+sw t2, 1026(zero)
+sw t6, 1026(zero)
+addi t2, zero, 41
+sw t2, 1026(zero)
+addi t2, zero, 61
 sw t2, 1026(zero)
 p_loop: beq s10, s9, print_exit
 addi s10, s10, -1
